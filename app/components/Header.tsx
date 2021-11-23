@@ -49,7 +49,7 @@ const Header = ({ siteTitle }: {siteTitle: string}) => {
     return null;
   }
 
-  function setThemeFuncForUserPrefEvent(e) {
+  function setThemeFuncForUserPrefEvent(e: any) {
     if(e.matches) {
       setColorMode('dark')
     } else {
