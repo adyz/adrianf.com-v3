@@ -14,6 +14,8 @@ import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
 import darkStylesUrl from "~/styles/dark.css";
+import profilePic from "~/images/profile.jpeg";
+
 import Header from "./components/Header"
 
 /**
@@ -79,17 +81,25 @@ function Document({
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div className="remix-app">
+    <>
       <Header />
-      <div className="remix-app__main">
-        <div className="container remix-app__main-content">{children}</div>
-      </div>
-      <footer className="remix-app__footer">
-        <div className="container remix-app__footer-content">
-          <p>&copy; You!</p>
+      <main>{children}</main>
+      <footer>
+
+        <div className="profile">
+            <img src={profilePic} alt="Adrian Florescu" />
         </div>
+        <div className="copy">
+          <p> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>
+          <p>Developed on <a href="https://www.remix.run">Remix</a></p>
+          <p><small style={{ fontSize: '7px' }}>Latest update: 6 Apr 2021</small></p>
+        </div>
+
+
+
+
       </footer>
-    </div>
+    </>
   );
 }
 
