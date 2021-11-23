@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactMarkdown from "react-markdown"
 import {
     Link
   } from "remix";
 
-export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false, isCollapsable = true }) {
+export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false, isCollapsable = true }: any) {
     const [isExpanded, setIsExpanded] = React.useState(false);
 
     return (
@@ -29,7 +28,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
           <p className="location">{item.location}</p>
         </div>
         <div className="intro">
-          {/* <ReactMarkdown source={item.intro} /> */}
+          <pre>{JSON.stringify(item.intro, null, 2)}</pre>
         </div>
   
         <div className={`expandable ${isExpanded || full ? 'is-expanded' : 'is-collapsed'}`}>
