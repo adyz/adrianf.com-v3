@@ -12,9 +12,9 @@ import {
 } from "remix";
 import type { LinksFunction } from "remix";
 
-import deleteMeRemixStyles from "~/styles/demos/remix.css";
 import globalStylesUrl from "~/styles/global.css";
 import darkStylesUrl from "~/styles/dark.css";
+import Header from "./components/Header"
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -32,7 +32,6 @@ export let links: LinksFunction = () => {
       href: darkStylesUrl,
       media: "(prefers-color-scheme: dark)"
     },
-    { rel: "stylesheet", href: deleteMeRemixStyles }
   ];
 };
 
@@ -81,26 +80,7 @@ function Document({
 function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
     <div className="remix-app">
-      <header className="remix-app__header">
-        <div className="container remix-app__header-content">
-          <Link to="/" title="Remix" className="remix-app__header-home-link">
-            <RemixLogo />
-          </Link>
-          <nav aria-label="Main navigation" className="remix-app__header-nav">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <a href="https://remix.run/docs">Remix Docs</a>
-              </li>
-              <li>
-                <a href="https://github.com/remix-run/remix">GitHub</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <div className="remix-app__main">
         <div className="container remix-app__main-content">{children}</div>
       </div>
