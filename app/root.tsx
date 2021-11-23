@@ -16,7 +16,7 @@ import globalStylesUrl from "~/styles/global.css";
 import darkStylesUrl from "~/styles/dark.css";
 import profilePic from "~/images/profile.jpeg";
 
-import Header from "./components/Header"
+import Header from "./components/Header/Header"
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -87,7 +87,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
       <footer>
 
         <div className="profile">
-            <img src={profilePic} alt="Adrian Florescu" />
+          <img src={profilePic} alt="Adrian Florescu" />
         </div>
         <div className="copy">
           <p> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>

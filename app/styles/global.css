@@ -1,3 +1,19 @@
+:root {
+    --colorBorder: #eeebd8;
+    --colorBrown: #543416;
+    --colorLightBrown: #865E5E;
+    --colorLigherBrown: #AEA092;
+    --colorSuperLigherBrown: #E7D7C8;
+    --colorBg: #fffdef;
+    --colorRed: #e95d5d;
+    --colorGreen: #52870f;
+    --colorWhite: #ffffff;
+    --colorLogoBody: #6FA68C;
+    --colorLogoLeg: #216155;
+    --colorLogoWing: #74CCA2;
+}
+
+
 body,html {
     background: #000;
     margin: 0;
@@ -999,6 +1015,10 @@ header nav a {
     border-radius: 8px
 }
 
+.page-header-insides .image .hero img {
+    max-width: 200px;
+}
+
 @media (max-width: 720px) {
     .page-header-insides .image .hero>div:first-child {
         padding-bottom:150%!important
@@ -1022,6 +1042,11 @@ footer .profile {
     height: 50px;
     margin: 1rem auto
 }
+footer .profile img {
+    display: block;
+    width: 100%;
+}
+
 
 footer .profile:hover {
     transform: scale(7.5)

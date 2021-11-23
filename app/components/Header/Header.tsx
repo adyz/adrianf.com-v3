@@ -9,7 +9,7 @@ import Logo from "./Logo";
 import Switch from "./Switch";
 import SwitchBase from "./SwitchBase";
 
-import soundToggle from "../sounds/switch.wav"
+import soundToggle from "../../sounds/switch.wav"
 
 const Header = ({ siteTitle }: {siteTitle: string}) => {
 
