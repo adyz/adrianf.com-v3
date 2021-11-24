@@ -1,7 +1,7 @@
 import type { MetaFunction, LoaderFunction } from "remix";
 import { useNavigate } from "remix";
-import VectorCharacter from "../components/VectorCharacter"
-import Boop from '../components/Boop';
+// import VectorCharacter from "../components/VectorCharacter"
+// import Boop from '../components/Boop';
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>;
@@ -21,7 +21,7 @@ export default function Index() {
 
   return (
     <div id="Home" className="sectionWelcomeWrapper section">
-      <VectorCharacter />
+      {/* <VectorCharacter /> */}
       <div className="sectionWelcomeText">
         <div>
           <div className="sectionWelcomeText__introHeader">
@@ -34,27 +34,7 @@ export default function Index() {
           </p>
           </div>
           <div className="sectionWelcomeText__introButtons">
-            <Boop y={2}>
-              <button
-                onClick={() => {
-                  window.location.href = "./Resume-Adrian-Florescu.pdf";
-                }}
-                className="button__readMore"
-                data-description="Or click on the links in the top right corner 🚀"
-              >
-                Download Resume
-          </button>
-            </Boop>
-            <Boop y={2}>
-              <button
-                onClick={() => {
-                  navigate("/contact/")
-                }}
-                className="button__contact"
-              >
-                Contact me
-          </button>
-            </Boop>
+          
           </div>
         </div>
       </div>
