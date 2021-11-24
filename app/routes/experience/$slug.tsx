@@ -8,10 +8,6 @@ import type { LoaderFunction } from "remix";
 export let loader: LoaderFunction = ({ request, params }) => {
     const {pathname} = new URL(request.url);
     const myExperience = experience.find(ex => {
-        console.log({
-            name: ex.companyLogo,
-            pathname: pathname
-        })
         if(`/experience/${ex.companyLogo}` === pathname) {
             return ex
         }

@@ -16,8 +16,6 @@ const Header = ({ siteTitle }: {siteTitle: string}) => {
   const location = useLocation();
   const pathName = location.pathname;
 
-  console.log({location})
-
   const [isSticky, setSticky] = useState(false);
   const [colorMode, setColorMode] = useState('light');
   const [{ x, y }, set] = useSpring(() => ({ x: 0, y: 0 }))
