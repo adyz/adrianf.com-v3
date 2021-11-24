@@ -5,8 +5,8 @@ export default function Logo() {
 <rect width="28" height="263" rx="2" fill="#CEA65F"/>
 </g>
 <defs>
-<filter id="filter04_i" x="0" y="0" width="32" height="267" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<filter id="filter04_i" x="0" y="0" width="32" height="267" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+<feFlood floodOpacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="20" dy="4"/>

@@ -1,7 +1,7 @@
 export default function Logo() {
     return (
         <svg version="1.1" id="logo-svg" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="548.14px" height="344.973px" viewBox="0 243.445 548.14 344.973" enable-background="new 0 243.445 548.14 344.973"
+            width="548.14px" height="344.973px" viewBox="0 243.445 548.14 344.973" enableBackground="new 0 243.445 548.14 344.973"
             xmlSpace="preserve">
             <path fill="#6FA68C" className="logo-body" d="M24,588.417l335-335h176L24,588.417z" />
             <path fill="#216155" className="logo-leg" d="M357,369.417h113l-446,219L357,369.417z" />

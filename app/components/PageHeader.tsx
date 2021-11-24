@@ -1,5 +1,3 @@
-import one from '../images/responsive-headers/1-d.jpg';
-
 function getRandomInt(min: number, max: number): any {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -13,7 +11,10 @@ function getRandomInt(min: number, max: number): any {
     }    
 }
 
-export default function PageHeader({ description, children }: any) {
+export default function PageHeader({ description, children }: {
+  description: string;
+  children: any;
+}) {
     return (
         <div className="page-header-wrapper">
           <div className="page-header-insides">
@@ -22,9 +23,7 @@ export default function PageHeader({ description, children }: any) {
                 <p>{description}</p>
               </div>
               <div className="image">
-                <div className="hero">
-                    <img src={one} />
-                </div>
+                <img src={`/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`} />
               </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { useSpring, animated } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
 import useSound from 'use-sound';
 
-import { Link } from "remix";
+import { Link, useLocation } from "remix";
 
 import Logo from "./Logo";
 import Switch from "./Switch";
@@ -12,6 +12,11 @@ import SwitchBase from "./SwitchBase";
 import soundToggle from "../../sounds/switch.wav"
 
 const Header = ({ siteTitle }: {siteTitle: string}) => {
+
+  const location = useLocation();
+  const pathName = location.pathname;
+
+  console.log({location})
 
   const [isSticky, setSticky] = useState(false);
   const [colorMode, setColorMode] = useState('light');
@@ -80,10 +85,10 @@ const Header = ({ siteTitle }: {siteTitle: string}) => {
           <Logo />
         </Link>
         <nav>
-          <Link to={`/tech-stack`} >TechStack</Link>
-          <Link  to={`/experience`} >Experience</Link>
-          <Link  to={`/thoughts`}>Thoughts</Link>
-          <Link to={`/contact`} >Contact</Link>
+          <Link className={`${pathName === '/tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
+          <Link className={`${pathName === '/experience' && 'is-active'}`} to={`/experience`} >Experience</Link>
+          <Link className={`${pathName === '/thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
+          <Link  className={`${pathName === '/contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
         </nav>
       </header>
       

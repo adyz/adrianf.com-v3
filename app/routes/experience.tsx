@@ -28,15 +28,19 @@ export default function Page() {
                     const isLast = nodes.length - 1 === itemIndex;
                     return (
                         <TrackVisibility once className="section-wrapper" key={`home-ex-${itemIndex}`} >
-                            {({ isVisible }) => <ExperienceSection
-                                key={itemIndex}
-                                item={item}
-                                first={isFirst}
-                                last={isLast}
-                                isCollapsable={false}
-                                home={true}
-                                isVisible={isVisible}
-                            />
+                            {({ isVisible }) => {
+                                return (
+                                    <ExperienceSection
+                                        key={itemIndex}
+                                        item={item}
+                                        first={isFirst}
+                                        last={isLast}
+                                        isCollapsable={false}
+                                        home={true}
+                                        isVisible={isVisible}
+                                    />
+                                )
+                            }
                             }
                         </TrackVisibility>
                     )

@@ -37,7 +37,7 @@ export default function Index() {
             <Boop y={2}>
               <button
                 onClick={() => {
-                  navigate("/Resume-Adrian-Florescu.pdf")
+                  window.location.href = "./Resume-Adrian-Florescu.pdf";
                 }}
                 className="button__readMore"
                 data-description="Or click on the links in the top right corner 🚀"
