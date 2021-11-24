@@ -1,9 +1,9 @@
-import icon_github from "../images/icons/svg/github.svg"
-import icon_linkedin from "../images/icons/svg/linkedin.svg"
-import icon_medium from "../images/icons/svg/medium.svg"
-import icon_twitter from "../images/icons/svg/twitter.svg"
-import icon_stackoverflow from "../images/icons/svg/stackoverflow.svg"
-import icon_youtube from "../images/icons/svg/youtube.svg"
+import icon_github from "../components/Icons/SocialGh"
+import icon_linkedin from "../components/Icons/SocialLi"
+import icon_medium from "../components/Icons/SocialMedium"
+import icon_twitter from "../components/Icons/SocialTw"
+import icon_stackoverflow from "../components/Icons/SocialSo"
+import icon_youtube from "../components/Icons/SocialYt"
 
 const socialItems = [
   {
