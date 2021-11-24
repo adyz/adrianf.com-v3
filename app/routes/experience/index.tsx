@@ -1,7 +1,7 @@
-import PageHeader from "../components/PageHeader"
-import ExperienceSection from "../components/ExperienceSection"
+import PageHeader from "../../components/PageHeader"
+import ExperienceSection from "../../components/ExperienceSection"
 import TrackVisibility from 'react-on-screen';
-import experience from '../data/experience';
+import experience from '../../data/experience';
 import { useLoaderData, json } from "remix";
 
 export let loader = () => {

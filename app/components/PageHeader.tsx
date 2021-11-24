@@ -12,7 +12,7 @@ function getRandomInt(min: number, max: number): any {
 }
 
 export default function PageHeader({ description, children }: {
-  description: string;
+  description?: string;
   children: any;
 }) {
     return (

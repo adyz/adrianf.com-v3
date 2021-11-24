@@ -1,4 +1,3 @@
-import React from "react"
 import PageHeader from "../components/PageHeader"
 import SayHi from "../components/SayHi"
 import SocialLinks from "../components/SocialLinks"
