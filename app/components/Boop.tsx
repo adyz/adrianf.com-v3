@@ -1,6 +1,6 @@
 import React from "react"
 import useBoop from '../hooks/useBoop';
-import { animated } from 'react-spring';
+import {animated} from '@react-spring/web';
 
 const Boop = ({ children, ...boopConfig }: any) => {
     const [style, trigger] = useBoop(boopConfig);
