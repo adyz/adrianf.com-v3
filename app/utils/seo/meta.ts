@@ -17,7 +17,7 @@ export function getSocialMetas({
     description?: string
     keywords?: string
 }) {
-    const finalImage = generateImageMeta(title);
+    const finalImage = image === 'false' ? generateImageMeta(title) : image;
     return {
         title,
         description,

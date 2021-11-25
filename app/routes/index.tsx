@@ -7,6 +7,7 @@ import {getSocialMetas} from '../utils/seo/meta';
 export let meta: MetaFunction = ({location}) => {
   return {
     ...getSocialMetas({
+      image: '/images/profile.jpeg',
       url: location.pathname,
       title: "Adrian Florescu - Front-end Developer - Bucharest, Romania",
       description: "Welcome to Adrianf.com - Front-end Developer - Bucharest, Romania - (v3)"
