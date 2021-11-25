@@ -27,7 +27,7 @@ export function getSocialMetas({
         'og:title': title,
         'og:description': description,
         'og:image': finalImage,
-        'twitter:card': image ? 'summary_large_image' : 'summary',
+        'twitter:card': finalImage ? 'summary_large_image' : 'summary',
         'twitter:creator': '@aflorescu',
         'twitter:site': '@aflorescu',
         'twitter:title': title,
