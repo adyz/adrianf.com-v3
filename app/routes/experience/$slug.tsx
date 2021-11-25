@@ -12,7 +12,7 @@ export let meta: MetaFunction = ({location, params, parentsData}) => {
     })
     return {
       ...getSocialMetas({
-        image: `https://res.cloudinary.com/adrianf/image/fetch/c_fill,g_face,h_300,w_300/l_text:Arial_24_bold:${description}/r_max/f_auto/https://adrianf-v3.netlify.app/images/responsive-headers/8-m.jpg${getRandomInt(1, 8)}`,
+        image: `https://res.cloudinary.com/adrianf/image/fetch/c_fill,g_face,h_300,w_300/l_text:Arial_24_bold:${description}/r_max/f_auto/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`,
         url: location.pathname,
         title: "Adrian Florescu - Experience @" + params.slug,
         description,
