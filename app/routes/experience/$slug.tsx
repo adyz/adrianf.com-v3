@@ -1,4 +1,4 @@
-import PageHeader from "../../components/PageHeader";
+import PageHeader, { getRandomInt } from "../../components/PageHeader";
 import {json, useLoaderData } from "remix";
 import ExperienceSection from "~/components/ExperienceSection";
 import experience from '../../data/experience';
@@ -6,15 +6,16 @@ import type { LoaderFunction, MetaFunction } from "remix";
 import {getSocialMetas} from '../../utils/seo/meta';
 
 export let meta: MetaFunction = ({location, params, parentsData}) => {
-    console.log('dsadasdasda');
+    const description = `My perspective on working with ${params.slug} as a front-end developer`
     console.log({
         params, parentsData
     })
     return {
       ...getSocialMetas({
+        image: `https://res.cloudinary.com/adrianf/image/fetch/c_fill,g_face,h_300,w_300/l_text:Arial_24_bold:${description}/r_max/f_auto/https://adrianf-v3.netlify.app/images/responsive-headers/8-m.jpg${getRandomInt(1, 8)}`,
         url: location.pathname,
         title: "Adrian Florescu - Experience @" + params.slug,
-        description: `My perspective on working with ${params.slug} as a front-end developer`
+        description,
       })
     };
   };
