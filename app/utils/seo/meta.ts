@@ -1,8 +1,14 @@
+import {getRandomInt} from '../../components/PageHeader';
+
+function generateImageMeta(text: string){
+    return `https://res.cloudinary.com/adrianf/image/fetch/c_mfit,h_630,w_1200/l_text:Arial_38_bold:${text},co_white/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
+}
+
 export function getSocialMetas({
     url,
     title = 'Front-end development was hard before remix',
     description = 'Better late than too early',
-    image = 'https://www.lorempixel.com/800/600',
+    image = generateImageMeta('I guess is 404'),
     keywords = '',
   }: {
     image?: string
@@ -15,7 +21,7 @@ export function getSocialMetas({
       title,
       description,
       keywords,
-      image,
+      image : generateImageMeta(title),
       'og:url': url,
       'og:title': title,
       'og:description': description,
