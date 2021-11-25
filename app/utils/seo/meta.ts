@@ -17,7 +17,7 @@ export function getSocialMetas({
     description?: string
     keywords?: string
 }) {
-    const finalImage = image !== 'false' ? generateImageMeta(title) : generateImageMeta('I guess is 404');
+    const finalImage = generateImageMeta(title);
     return {
         title,
         description,
