@@ -1,8 +1,12 @@
-const Boop = ({ children }: any) => {
+// import useBoop from '../hooks/useBoop';
+import { animated } from 'react-spring';
+
+const Boop = ({ children}: any) => {
     return (
-      <span>
+      // @ts-ignore
+      <animated.span>
         {children}
-      </span>
+      </animated.span>
     );
   };
 
