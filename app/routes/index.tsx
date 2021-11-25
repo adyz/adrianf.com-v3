@@ -9,7 +9,7 @@ export let meta: MetaFunction = ({location}) => {
     ...getSocialMetas({
       image: 'https://adrianf-v3.netlify.app/images/profile.jpeg',
       url: location.pathname,
-      title: "Adrian Florescu - Front-end Developer - Bucharest, Romania",
+      title: "Adrian Florescu - Front-end Developer - Bucharest - Romania",
       description: "Welcome to Adrianf.com - Front-end Developer - Bucharest, Romania - (v3)"
     })
   };
