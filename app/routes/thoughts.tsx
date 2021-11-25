@@ -9,7 +9,7 @@ export let meta: MetaFunction = ({location}) => {
     return {
       ...getSocialMetas({
         url: location.pathname,
-        title: "Adrian Florescu - Thooughts of a front-end developer",
+        title: "Adrian Florescu - Thoughts",
         description: "I write from time to time. Read my thoughts to know me better"
       })
     };
