@@ -1,18 +1,16 @@
-import type { MetaFunction, LoaderFunction } from "remix";
+import type { MetaFunction } from "remix";
 import { useNavigate } from "remix";
 import VectorCharacter from "../components/VectorCharacter"
 import Boop from '../components/Boop';
+import {getSocialMetas} from '../utils/seo/meta';
 
-type IndexData = {
-  resources: Array<{ name: string; url: string }>;
-  demos: Array<{ name: string; to: string }>;
-};
-
-
-export let meta: MetaFunction = () => {
+export let meta: MetaFunction = ({location}) => {
   return {
-    title: "Adrian Florescu",
-    description: "Welcome to Adrianf.com V3 - Front-end Developer"
+    ...getSocialMetas({
+      url: location.pathname,
+      title: "Adrian Florescu - Front-end Developer - Bucharest, Romania",
+      description: "Welcome to Adrianf.com - Front-end Developer - Bucharest, Romania - (v3)"
+    })
   };
 };
 
@@ -31,7 +29,7 @@ export default function Index() {
           <div className="sectionWelcomeText__introDescription">
             <p>
               I am a Front-end Developer living in Bucharest, Romania. I've been designing and coding user interfaces for the web in the last decade using HTML, CSS, and JS.
-          </p>
+            </p>
           </div>
           <div className="sectionWelcomeText__introButtons">
             <Boop y={2}>
@@ -43,7 +41,7 @@ export default function Index() {
                 data-description="Or click on the links in the top right corner 🚀"
               >
                 Download Resume
-          </button>
+              </button>
             </Boop>
             <Boop y={2}>
               <button
@@ -53,7 +51,7 @@ export default function Index() {
                 className="button__contact"
               >
                 Contact me
-          </button>
+              </button>
             </Boop>
           </div>
         </div>

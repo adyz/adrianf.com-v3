@@ -2,6 +2,18 @@ import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import PageHeader from "../components/PageHeader"
 import articles from '../data/articles';
 import { useLoaderData, json } from "remix";
+import type { MetaFunction } from "remix";
+import {getSocialMetas} from '../utils/seo/meta';
+
+export let meta: MetaFunction = ({location}) => {
+    return {
+      ...getSocialMetas({
+        url: location.pathname,
+        title: "Adrian Florescu - Thooughts of a front-end developer",
+        description: "I write from time to time. Read my thoughts to know me better"
+      })
+    };
+  };
 
 export let loader = () => {
     return json(articles)

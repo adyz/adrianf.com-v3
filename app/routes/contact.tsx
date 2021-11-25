@@ -1,6 +1,18 @@
 import PageHeader from "../components/PageHeader"
 import SayHi from "../components/SayHi"
 import SocialLinks from "../components/SocialLinks"
+import type { MetaFunction } from "remix";
+import {getSocialMetas} from '../utils/seo/meta';
+
+export let meta: MetaFunction = ({location}) => {
+    return {
+      ...getSocialMetas({
+        url: location.pathname,
+        title: "Adrian Florescu - Contact",
+        description: "WIt's always nice to say hi! Email me or get in touch with me via social platforms"
+      })
+    };
+  };
 
 export default function Page() {
     const description = `It's always nice to say hi! Email me or get in touch with me via social platforms`;

@@ -2,14 +2,17 @@
 import TechStackSection from "../components/TechStackSection"
 import PageHeader from "../components/PageHeader"
 import type { MetaFunction } from "remix";
+import {getSocialMetas} from '../utils/seo/meta';
 
-
-export let meta: MetaFunction = () => {
+export let meta: MetaFunction = ({location}) => {
     return {
+      ...getSocialMetas({
+        url: location.pathname,
         title: "Adrian Florescu - Tech Stack",
-        description: "Ce stack mai folosesc"
+        description: "I use tools and I like to keep them up to date, here's my current stack"
+      })
     };
-};
+  };
 
 export default function Page() {
     const description = `I use tools and I like to keep them up to date, here's my current stack`;

@@ -34,6 +34,12 @@ export let links: LinksFunction = () => {
       href: darkStylesUrl,
       media: "(prefers-color-scheme: dark)"
     },
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "images/favicon.png"
+    }
+
   ];
 };
 
@@ -145,16 +151,17 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error);
   return (
     <Document title="Error!">
-      <Layout>
-        <div>
-          <h1>There was an error</h1>
-          <p>{error.message}</p>
-          <hr />
-          <p>
-            Hey, developer, you should replace this with what you want your
-            users to see.
-          </p>
+
+<Layout>
+        <div className="notFoundWrapper">
+          <div className="notFound">
+            <VectorCharacter404 />
+            <h1>There was an error</h1>
+            <p>{error.message}</p>
+            <a href="/">Go Home</a>
+          </div>
         </div>
+
       </Layout>
     </Document>
   );

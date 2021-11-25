@@ -3,9 +3,20 @@ import ExperienceSection from "../../components/ExperienceSection"
 import TrackVisibility from 'react-on-screen';
 import experience from '../../data/experience';
 import { useLoaderData, json } from "remix";
+import type { MetaFunction } from "remix";
+import {getSocialMetas} from '../../utils/seo/meta';
+
+export let meta: MetaFunction = ({location}) => {
+    return {
+      ...getSocialMetas({
+        url: location.pathname,
+        title: "Adrian Florescu - Experience",
+        description: "Working with startups and big companies like IBM in my more than 10 years front-end development career"
+      })
+    };
+  };
 
 export let loader = () => {
-
     return json(experience)
 }
 
