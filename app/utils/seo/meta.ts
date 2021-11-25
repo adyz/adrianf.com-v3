@@ -1,11 +1,11 @@
 import { getRandomInt } from '../../components/PageHeader';
 
 function generateImageMeta(text: string) {
-    return `https://res.cloudinary.com/adrianf/image/fetch/c_mfit,h_630,w_1200/l_text:Arial_38_bold:${text},co_white/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
+    return `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_630,w_1200/l_text:Arial_38_bold:${text},co_white/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
 }
 
 function reiszeAndAddText(imagePath: string, text: string) {
-    return `https://res.cloudinary.com/adrianf/image/fetch/c_mfit,h_630,w_1200/l_text:Arial_38_bold:${text},co_white/${imagePath}`
+    return `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_630,w_1200:${text}/${imagePath}`
 }
 
 export function getSocialMetas({
