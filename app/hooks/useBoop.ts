@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSpring } from 'react-spring';
 import usePrefersReducedMotion from './usePrefersReduceMotion';
 function useBoop({

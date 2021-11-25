@@ -1,4 +1,3 @@
-import React from "react"
 import useBoop from '../hooks/useBoop';
 import { animated } from 'react-spring';
 
