@@ -1,4 +1,4 @@
-import { animated } from 'react-spring';
+import { animated } from '@react-spring/web';
 import useBoop from '../hooks/useBoop';
 
 const SayHi = () => {

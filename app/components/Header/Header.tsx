@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import useSound from 'use-sound';
 

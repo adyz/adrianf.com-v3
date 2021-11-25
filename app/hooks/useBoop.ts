@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSpring } from 'react-spring';
+import { useSpring } from '@react-spring/web';
 import usePrefersReducedMotion from './usePrefersReduceMotion';
 function useBoop({
   x = 0,
