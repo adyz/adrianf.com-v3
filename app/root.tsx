@@ -1,6 +1,5 @@
 import * as React from "react";
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -15,8 +14,8 @@ import type { LinksFunction } from "remix";
 import globalStylesUrl from "~/styles/global.css";
 import darkStylesUrl from "~/styles/dark.css";
 
-import Header from "./components/Header/Header"
-import VectorCharacter404 from "./components/VectorCharacter404"
+// import Header from "./components/Header/Header"
+// import VectorCharacter404 from "./components/VectorCharacter404"÷
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -82,7 +81,7 @@ function Document({
 function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main>{children}</main>
       <footer>
 
@@ -127,7 +126,7 @@ export function CatchBoundary() {
       <Layout>
         <div className="notFoundWrapper">
           <div className="notFound">
-            <VectorCharacter404 />
+            {/* <VectorCharacter404 /> */}
             <h1>
               {caught.status}: {caught.statusText}
             </h1>

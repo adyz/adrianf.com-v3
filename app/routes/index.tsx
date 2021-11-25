@@ -3,11 +3,6 @@ import { useNavigate } from "remix";
 import VectorCharacter from "../components/VectorCharacter"
 import Boop from '../components/Boop';
 
-type IndexData = {
-  resources: Array<{ name: string; url: string }>;
-  demos: Array<{ name: string; to: string }>;
-};
-
 
 export let meta: MetaFunction = () => {
   return {
@@ -34,7 +29,7 @@ export default function Index() {
           </p>
           </div>
           <div className="sectionWelcomeText__introButtons">
-            <Boop y={2}>
+          <Boop y={2}>
               <button
                 onClick={() => {
                   window.location.href = "./Resume-Adrian-Florescu.pdf";
