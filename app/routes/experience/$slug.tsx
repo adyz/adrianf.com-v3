@@ -7,7 +7,7 @@ import {getSocialMetas} from '../../utils/seo/meta';
 
 export let meta: MetaFunction = ({location, params, parentsData}) => {
     const description = `My perspective on working with ${params.slug} as a front-end developer`
-    const image = `https://res.cloudinary.com/adrianf/image/fetch/h_630,w_1200/l_text:Arial_24_bold:${description}/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
+    const image = `https://res.cloudinary.com/adrianf/image/fetch/c_mfit,h_630,w_1200/l_text:Arial_44_bold:${description}/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
     console.log({
         image
     })
