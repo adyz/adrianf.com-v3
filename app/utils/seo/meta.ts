@@ -32,7 +32,7 @@ export function getSocialMetas({
         'twitter:site': '@aflorescu',
         'twitter:title': title,
         'twitter:description': description,
-        'twitter:image': image,
+        'twitter:image': finalImage,
         'twitter:alt': title,
     }
 }
