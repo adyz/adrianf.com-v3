@@ -30,7 +30,7 @@ export default function VectorCharacter() {
             <path d="M157.466 291.322L160.056 292.459" stroke="#795A5A" />
             <circle cx="160.432" cy="292.513" r="1" transform="rotate(-47.9307 160.432 292.513)" fill="#795A5A" />
             <circle cx="89.5" cy="65.5" r="6" fill="white" stroke="#A1854D" />
-            <path fillRule="evenodd" clip-rule="evenodd" d="M74 58.5L76 70L92.5 75L106 60.5L105 49L98.5 54.5L80.5 59.5L74 58.5ZM89.5 73C93.6421 73 97 69.6421 97 65.5C97 61.3579 93.6421 58 89.5 58C85.3579 58 82 61.3579 82 65.5C82 69.6421 85.3579 73 89.5 73Z" fill="#E1DCAD" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M74 58.5L76 70L92.5 75L106 60.5L105 49L98.5 54.5L80.5 59.5L74 58.5ZM89.5 73C93.6421 73 97 69.6421 97 65.5C97 61.3579 93.6421 58 89.5 58C85.3579 58 82 61.3579 82 65.5C82 69.6421 85.3579 73 89.5 73Z" fill="#E1DCAD" />
         </svg>
     )
 }

@@ -7,12 +7,13 @@ import {getSocialMetas} from '../../utils/seo/meta';
 
 export let meta: MetaFunction = ({location, params, parentsData}) => {
     const description = `My perspective on working with ${params.slug} as a front-end developer`
+    const image = `https://res.cloudinary.com/adrianf/image/fetch/h_630,w_1200/l_text:Arial_24_bold:${description}/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
     console.log({
-        params, parentsData
+        image
     })
     return {
       ...getSocialMetas({
-        image: `https://res.cloudinary.com/adrianf/image/fetch/h_630,w_1200/l_text:Arial_24_bold:${description}/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`,
+        image,
         url: location.pathname,
         title: "Adrian Florescu - Experience @" + params.slug,
         description,
