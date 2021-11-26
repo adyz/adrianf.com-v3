@@ -17,7 +17,7 @@ export default function PageHeader({ description, children }: {
 }) {
   const image = `https://adrianf.com/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`;
   const resizedImage = `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_640,w_824,q_60/${image}`
-  const resizedImageMobile = `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_640,w_300,q_30/${image}`
+  const resizedImageMobile = `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_620,w_450,q_30/${image}`
     return (
         <div className="page-header-wrapper">
           <div className="page-header-insides">
