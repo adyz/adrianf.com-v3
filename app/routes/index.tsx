@@ -10,7 +10,8 @@ export let meta: MetaFunction = ({location}) => {
       image: 'https://adrianf-v3.netlify.app/images/profile.jpeg',
       url: location.pathname,
       title: "Adrian Florescu - Front-end Developer - Bucharest - Romania",
-      description: "Welcome to Adrianf.com - Front-end Developer - Bucharest, Romania - (v3)"
+      description: "Welcome to Adrianf.com - Front-end Developer - Bucharest, Romania - (v3)",
+      keywords: "adrian, adrian florescu, florescu, homepage, html, css, js, typescript, remix, react, romania, bucharest, front-end development"
     })
   };
 };

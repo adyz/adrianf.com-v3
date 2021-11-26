@@ -11,6 +11,7 @@ export let meta: MetaFunction = ({location, params, parentsData}) => {
         url: location.pathname,
         title: "Adrian Florescu - Experience @" + params.slug,
         description: `My perspective on working with ${params.slug} as a front-end developer`,
+        keywords: `${location.pathname}, adrian, adrian florescu, career, resume, florescu, experience, html, css, js, typescript, remix, react, romania, bucharest, front-end development`
       })
     };
   };

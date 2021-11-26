@@ -10,7 +10,8 @@ export let meta: MetaFunction = ({location}) => {
       ...getSocialMetas({
         url: location.pathname,
         title: "Adrian Florescu - Thoughts",
-        description: "I write from time to time. Read my thoughts to know me better"
+        description: "I write from time to time. Read my thoughts to know me better",
+        keywords: "blog, articles, adrian, florescu, thoughts, front-end development"
       })
     };
   };

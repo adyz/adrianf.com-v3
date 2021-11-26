@@ -9,7 +9,8 @@ export let meta: MetaFunction = ({location}) => {
       ...getSocialMetas({
         url: location.pathname,
         title: "Adrian Florescu - Tech Stack",
-        description: "I use tools and I like to keep them up to date, here's my current stack"
+        description: "I use tools and I like to keep them up to date, here's my current stack",
+        keywords: "adrian, adrian florescu, html, css, javascript, typescript, php, react, redux, wordpress, remix, tailwind, tailwindcss, webpack, jest, react-testing-library"
       })
     };
   };

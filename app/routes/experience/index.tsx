@@ -11,7 +11,8 @@ export let meta: MetaFunction = ({location}) => {
       ...getSocialMetas({
         url: location.pathname,
         title: "Adrian Florescu - Experience",
-        description: "Working with startups and big companies like IBM in my more than 10 years front-end development career"
+        description: "Working with startups and big companies like IBM in my more than 10 years front-end development career",
+        keywords: "adrian, adrian florescu, career, resume, florescu, experience, html, css, js, typescript, remix, react, romania, bucharest, front-end development"
       })
     };
   };

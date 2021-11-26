@@ -9,7 +9,8 @@ export let meta: MetaFunction = ({location}) => {
       ...getSocialMetas({
         url: location.pathname,
         title: "Adrian Florescu - Contact",
-        description: "It's always nice to say hi! Email me or get in touch with me via social platforms"
+        description: "It's always nice to say hi! Email me or get in touch with me via social platforms",
+        keywords: "contact me, say hi, greeting, html, css, js, typescript, remix, react, romania, bucharest front-end development"
       })
     };
   };
