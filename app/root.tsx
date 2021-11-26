@@ -1,15 +1,18 @@
-import * as React from "react";
 import {
   Link,
   Links,
   LiveReload,
+  LoaderFunction,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useCatch,
-  useLocation
+  useLocation,
+  json,
+  useLoaderData
 } from "remix";
+import * as React from 'react';
 import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
@@ -17,6 +20,8 @@ import darkStylesUrl from "~/styles/dark.css";
 
 import Header from "./components/Header/Header"
 import VectorCharacter404 from "./components/VectorCharacter404"
+import { COLOR_MODE_KEY, TColorMode } from "./constants";
+import { getCookie } from "./utils/cookie";
 
 /**
  * The `links` export is a function that returns an array of objects that map to
@@ -39,8 +44,16 @@ export let links: LinksFunction = () => {
       type: "image/png",
       href: "images/favicon.png"
     }
-
   ];
+};
+
+export let loader: LoaderFunction = (props) => {
+  const realCookieString = props.request.headers.get('cookie');
+  const cookieString = realCookieString ? realCookieString : '';
+  const colorMode = getCookie(COLOR_MODE_KEY, cookieString);
+  
+  
+  return json({colorMode: colorMode ? colorMode : 'light'});
 };
 
 /**
@@ -49,9 +62,10 @@ export let links: LinksFunction = () => {
  * component for your app.
  */
 export default function App() {
+  const data = useLoaderData<{colorMode: TColorMode}>();
   return (
     <Document>
-      <Layout>
+      <Layout colorMode={data.colorMode}>
         <Outlet />
       </Layout>
     </Document>
@@ -85,10 +99,11 @@ function Document({
   );
 }
 
-function Layout({ children }: React.PropsWithChildren<{}>) {
+function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TColorMode}>) {
+  console.log({LayoutColor: colorMode});
   return (
     <>
-      <Header />
+      <Header initialColorMode={colorMode} />
       <main>{children}</main>
       <footer>
 
@@ -97,7 +112,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
         </div>
         <div className="copy">
           <p> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>
-          <p>Developed on <a href="https://www.remix.run">Remix</a></p>
+          <p>Developed on <a href="https://www.remix.run">💿Remix</a></p>
           <p><small style={{ fontSize: '7px' }}>Latest update: 24 Nov 2021</small></p>
         </div>
       </footer>
@@ -105,7 +120,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
   );
 }
 
-export function CatchBoundary() {
+export function CatchBoundary({colorMode}: {colorMode: TColorMode}) {
   let caught = useCatch();
 
   let message;
@@ -130,7 +145,7 @@ export function CatchBoundary() {
 
   return (
     <Document title={`${caught.status} ${caught.statusText}`}>
-      <Layout>
+      <Layout colorMode={colorMode}>
         <div className="notFoundWrapper">
           <div className="notFound">
             <VectorCharacter404 />
@@ -147,12 +162,12 @@ export function CatchBoundary() {
   );
 }
 
-export function ErrorBoundary({ error }: { error: Error }) {
+export function ErrorBoundary({ error, colorMode }: { error: Error, colorMode: TColorMode }) {
   console.error(error);
   return (
     <Document title="Error!">
 
-<Layout>
+      <Layout colorMode={colorMode}>
         <div className="notFoundWrapper">
           <div className="notFound">
             <VectorCharacter404 />

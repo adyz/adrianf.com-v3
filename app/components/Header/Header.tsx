@@ -8,19 +8,21 @@ import { Link, useLocation } from "remix";
 import Logo from "./Logo";
 import Switch from "./Switch";
 import SwitchBase from "./SwitchBase";
-
 import soundToggle from "../../sounds/switch.wav"
+import { COLOR_MODE_KEY } from '~/constants';
+import type { TColorMode } from '~/constants';
+import { setCookie } from '~/utils/cookie';
 
-const Header = ({ siteTitle }: {siteTitle: string}) => {
+const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialColorMode: TColorMode }) => {
 
   const location = useLocation();
   const pathName = location.pathname;
 
   const [isSticky, setSticky] = useState(false);
-  const [colorMode, setColorMode] = useState('light');
+  const [colorMode, setColorMode] = useState<TColorMode>(initialColorMode);
   const [{ x, y }, set] = useSpring(() => ({ x: 0, y: 0 }))
   const [toggled, setToggled] = useState(false);
-  const [playToggleSound] = useSound(soundToggle, {volume: 0.1});
+  const [playToggleSound] = useSound(soundToggle, { volume: 0.1 });
 
   // Set the drag hook and define component movement based on gesture data
   const bind = useGesture({
@@ -48,12 +50,12 @@ const Header = ({ siteTitle }: {siteTitle: string}) => {
     };
   }, []);
 
-  if(!colorMode) {
+  if (!colorMode) {
     return null;
   }
 
   function setThemeFuncForUserPrefEvent(e: any) {
-    if(e.matches) {
+    if (e.matches) {
       setColorMode('dark')
     } else {
       setColorMode('light')
@@ -69,8 +71,10 @@ const Header = ({ siteTitle }: {siteTitle: string}) => {
     playToggleSound();
     if (colorMode === 'dark') {
       setColorMode('light');
+      setCookie(COLOR_MODE_KEY, 'light', 360);
     } else {
       setColorMode('dark');
+      setCookie(COLOR_MODE_KEY, 'dark', 360);
     }
   }
 
@@ -86,10 +90,50 @@ const Header = ({ siteTitle }: {siteTitle: string}) => {
           <Link className={`${pathName === '/tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
           <Link className={`${pathName === '/experience' && 'is-active'}`} to={`/experience`} >Experience</Link>
           <Link className={`${pathName === '/thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
-          <Link  className={`${pathName === '/contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
+          <Link className={`${pathName === '/contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
         </nav>
       </header>
-      
+
+      {colorMode === 'light' ? (
+        <style>
+          {`
+          :root {
+            --colorBorder: #eeebd8;
+            --colorBrown: #543416;
+            --colorLightBrown: #865E5E;
+            --colorLigherBrown: #AEA092;
+            --colorSuperLigherBrown: #E7D7C8;
+            --colorBg: #fffdef;
+            --colorRed: #e95d5d;
+            --colorGreen: #52870f;
+            --colorWhite: #ffffff;
+            --colorLogoBody: #6FA68C;
+            --colorLogoLeg: #216155;
+            --colorLogoWing: #74CCA2;
+          }
+          `}
+        </style>
+      ) : (
+        <style>
+          {`
+          :root {
+            --colorBorder: #3a3a30;
+            --colorBrown: #F5EFB9;
+            --colorLightBrown: #9F9C7D;
+            --colorLigherBrown: #716E59;
+            --colorSuperLigherBrown: #525040;
+            --colorBg: #434238;
+            --colorRed: #9F9C7D;
+            --colorGreen: #52870f;
+            --colorWhite: #28281F;
+            --colorLogoBody: #6FA68C;
+            --colorLogoLeg: #216155;
+            --colorLogoWing: #74CCA2;
+          }
+          `}
+        </style>
+      )}
+
       <div className="switch">
         <div className="switch__base">
           <SwitchBase />
