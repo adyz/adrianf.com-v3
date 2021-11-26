@@ -100,7 +100,6 @@ function Document({
 }
 
 function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TColorMode}>) {
-  console.log({LayoutColor: colorMode});
   return (
     <>
       <Header initialColorMode={colorMode} />
@@ -120,7 +119,7 @@ function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TCo
   );
 }
 
-export function CatchBoundary({colorMode}: {colorMode: TColorMode}) {
+export function CatchBoundary() {
   let caught = useCatch();
 
   let message;
@@ -145,7 +144,7 @@ export function CatchBoundary({colorMode}: {colorMode: TColorMode}) {
 
   return (
     <Document title={`${caught.status} ${caught.statusText}`}>
-      <Layout colorMode={colorMode}>
+      <Layout colorMode={'light'}>
         <div className="notFoundWrapper">
           <div className="notFound">
             <VectorCharacter404 />
@@ -162,12 +161,11 @@ export function CatchBoundary({colorMode}: {colorMode: TColorMode}) {
   );
 }
 
-export function ErrorBoundary({ error, colorMode }: { error: Error, colorMode: TColorMode }) {
-  console.error(error);
+export function ErrorBoundary({ error, request }: { error: Error, request: any }) {
   return (
     <Document title="Error!">
 
-      <Layout colorMode={colorMode}>
+      <Layout colorMode={'light'}>
         <div className="notFoundWrapper">
           <div className="notFound">
             <VectorCharacter404 />
