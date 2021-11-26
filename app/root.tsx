@@ -100,6 +100,8 @@ function Document({
 }
 
 function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TColorMode}>) {
+  const profileImage = `http://adrianf.com/images/profile.jpeg`;
+  const resizedProfileImage = `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_800,w_800,q_60/${profileImage}`
   return (
     <>
       <Header initialColorMode={colorMode} />
@@ -107,7 +109,7 @@ function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TCo
       <footer>
 
         <div className="profile">
-          <img src={`/images/profile.jpeg`} alt="Adrian Florescu" />
+          <img src={resizedProfileImage} alt="Adrian Florescu" />
         </div>
         <div className="copy">
           <p> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>

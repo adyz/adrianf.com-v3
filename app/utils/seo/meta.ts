@@ -4,7 +4,7 @@ function generateImageMeta(text: string) {
     return `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_630,w_1200/l_text:Arial_38_bold:${text},co_white/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
 }
 
-function reiszeImage(imagePath: string) {
+export function resizeImage(imagePath: string) {
     return `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_630,w_1200/${imagePath}`
 }
 
@@ -21,7 +21,7 @@ export function getSocialMetas({
     description?: string
     keywords?: string
 }) {
-    const finalImage = image === 'false' ? generateImageMeta(title) : reiszeImage(image);
+    const finalImage = image === 'false' ? generateImageMeta(title) : resizeImage(image);
     return {
         title,
         description,
