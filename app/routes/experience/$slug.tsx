@@ -16,9 +16,9 @@ export let meta: MetaFunction = ({location, params, parentsData}) => {
   };
 
 export let loader: LoaderFunction = ({ request, params }) => {
-    const {pathname} = new URL(request.url);
+    const {pathname} = new URL(request.url)
     const myExperience = experience.find(ex => {
-        if(`/experience/${ex.companyLogo}` === pathname) {
+        if(`/experience/${ex.companyLogo}` === pathname.replace('/', '')) {
             return ex
         }
     });
