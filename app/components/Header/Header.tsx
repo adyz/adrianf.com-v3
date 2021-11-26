@@ -16,8 +16,12 @@ import { setCookie } from '~/utils/cookie';
 const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialColorMode: TColorMode }) => {
 
   const location = useLocation();
-  const pathName = location.pathname;
+  //@ts-ignore
+  const pathName = location.pathname.replaceAll('/', '');
 
+  console.log({
+    pathName
+  })
   const [isSticky, setSticky] = useState(false);
   const [colorMode, setColorMode] = useState<TColorMode>(initialColorMode);
   const [{ x, y }, set] = useSpring(() => ({ x: 0, y: 0 }))
@@ -87,10 +91,10 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
           <Logo />
         </Link>
         <nav>
-          <Link className={`${pathName === '/tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
-          <Link className={`${pathName === '/experience' && 'is-active'}`} to={`/experience`} >Experience</Link>
-          <Link className={`${pathName === '/thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
-          <Link className={`${pathName === '/contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
+          <Link className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
+          <Link className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
+          <Link className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
+          <Link className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
         </nav>
       </header>
 
