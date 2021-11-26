@@ -22,9 +22,6 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
   const location = useLocation();
   const pathName = replaceAll(location.pathname, '/', '');
 
-  console.log({
-    pathName
-  })
   const [isSticky, setSticky] = useState(false);
   const [colorMode, setColorMode] = useState<TColorMode>(initialColorMode);
   const [{ x, y }, set] = useSpring(() => ({ x: 0, y: 0 }))
@@ -90,7 +87,7 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
     <>
       <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
 
-        <Link className="logo" title={siteTitle} to="/">
+        <Link className={`logo ${pathName === '' && 'is-active'}`} title={siteTitle} to="/">
           <Logo />
         </Link>
         <nav>
