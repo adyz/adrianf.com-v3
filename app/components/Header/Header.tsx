@@ -13,11 +13,14 @@ import { COLOR_MODE_KEY } from '~/constants';
 import type { TColorMode } from '~/constants';
 import { setCookie } from '~/utils/cookie';
 
+function replaceAll(originalString: string, find: string, replace: string) {
+  return originalString.replace(new RegExp(find, 'g'), replace);
+};
+
 const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialColorMode: TColorMode }) => {
 
   const location = useLocation();
-  //@ts-ignore
-  const pathName = location.pathname.replaceAll('/', '');
+  const pathName = replaceAll(location.pathname, '/', '');
 
   console.log({
     pathName
