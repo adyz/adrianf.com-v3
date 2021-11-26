@@ -17,6 +17,7 @@ export default function PageHeader({ description, children }: {
 }) {
   const image = `https://adrianf.com/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`;
   const resizedImage = `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_640,w_824,q_60/${image}`
+  const resizedImageMobile = `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_640,w_300,q_30/${image}`
     return (
         <div className="page-header-wrapper">
           <div className="page-header-insides">
@@ -25,7 +26,11 @@ export default function PageHeader({ description, children }: {
                 <p>{description}</p>
               </div>
               <div className="image">
-                <img src={resizedImage} />
+              <picture>
+                <source media="(max-width: 799px)" srcSet={resizedImageMobile} />
+                <source media="(min-width: 800px)" srcSet={resizedImage} />
+                <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva" />
+              </picture>
               </div>
           </div>
         </div>

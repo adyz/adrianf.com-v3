@@ -512,7 +512,7 @@ header nav a {
 }
 
 .sectionExperience section .companyLogo .image-wrapper img {
-    border-radius: 8px;
+    display: block;
     width: 100%;
 }
 
@@ -1007,13 +1007,6 @@ header nav a {
     position: absolute;
     top:0;
     left:0;
-}
-
-
-@media (max-width: 720px) {
-    .page-header-insides .image img {
-        width: 270%;
-    }
 }
 
 footer {
