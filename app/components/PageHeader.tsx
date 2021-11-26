@@ -15,7 +15,7 @@ export default function PageHeader({ description, children }: {
   description?: string;
   children: any;
 }) {
-  const image = `http://adrianf.com/images/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`;
+  const image = `https://adrianf.com/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`;
   const resizedImage = `https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_640,w_824,q_60/${image}`
     return (
         <div className="page-header-wrapper">
