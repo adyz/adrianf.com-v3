@@ -16,7 +16,6 @@ import * as React from 'react';
 import type { LinksFunction } from "remix";
 
 import globalStylesUrl from "~/styles/global.css";
-import darkStylesUrl from "~/styles/dark.css";
 
 import Header from "./components/Header/Header"
 import VectorCharacter404 from "./components/VectorCharacter404"
@@ -34,11 +33,6 @@ import { getCookie } from "./utils/cookie";
 export let links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: globalStylesUrl },
-    {
-      rel: "stylesheet",
-      href: darkStylesUrl,
-      media: "(prefers-color-scheme: dark)"
-    },
     {
       rel: "icon",
       type: "image/png",

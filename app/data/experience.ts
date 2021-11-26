@@ -2,7 +2,6 @@
 function formatDate(date: any) {
   return date.toLocaleString("en-us", { year: "numeric", month: "long" })
 }
-
 const items = [
   {
     title: "Senior Front-end Developer",
