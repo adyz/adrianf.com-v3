@@ -134,14 +134,6 @@ const Header = () => {
       setCookie(COLOR_MODE_KEY, 'dark', 360);
     }
   }
-
-  const specialMeta = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "url": "http://www.adrianf.com",
-    "logo": "https://res.cloudinary.com/adrianf/image/fetch/f_auto,q_10/https://adrianf.com/images/favicon.png"
-  }
-
   return (
     <>
       <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
