@@ -99,6 +99,7 @@ function Document({
 function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TColorMode}>) {
   const profileImage = `http://adrianf.com/images/profile.jpeg`;
   const resizedProfileImage = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,h_800,w_800,q_60/${profileImage}`
+  const resizedProfileImageMobile = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,h_400,w_400,q_60/${profileImage}`
   return (
     <>
       <Header initialColorMode={colorMode} />
@@ -106,7 +107,11 @@ function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TCo
       <footer>
 
         <div className="profile">
-          <img width="100%" height="100%" src={resizedProfileImage} alt="Adrian Florescu" />
+          <picture>
+            <source width="100%" height="100%" media="(max-width: 799px)" srcSet={resizedProfileImageMobile} />
+            <source width="100%" height="100%" media="(min-width: 800px)" srcSet={resizedProfileImage} />
+            <img width="100%" height="100%" src={resizedProfileImage} alt="Adrian Florescu" />
+          </picture>
         </div>
         <div className="copy">
           <p> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>
