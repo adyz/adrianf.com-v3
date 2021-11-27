@@ -3,9 +3,6 @@ import { useSpring, animated } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import useSound from 'use-sound';
 
-import darkStylesUrl from "~/styles/dark.css";
-import lightStylesUrl from "~/styles/light.css";
-
 import { Link, useLocation, useLoaderData } from "remix";
 
 import Logo from "./Logo";
@@ -20,10 +17,41 @@ function replaceAll(originalString: string, find: string, replace: string) {
   return originalString.replace(new RegExp(find, 'g'), replace);
 };
 
+
+const darkVars = `
+  --colorBorder: #3a3a30;
+  --colorBrown: #F5EFB9;
+  --colorLightBrown: #9F9C7D;
+  --colorLigherBrown: #716E59;
+  --colorSuperLigherBrown: #525040;
+  --colorBg: #434238;
+  --colorRed: #9F9C7D;
+  --colorGreen: #52870f;
+  --colorWhite: #28281F;
+  --colorLogoBody: #6FA68C;
+  --colorLogoLeg: #216155;
+  --colorLogoWing: #74CCA2;
+`
+
+const lightVars = `
+  --colorBorder: #eeebd8;
+  --colorBrown: #543416;
+  --colorLightBrown: #865E5E;
+  --colorLigherBrown: #AEA092;
+  --colorSuperLigherBrown: #E7D7C8;
+  --colorBg: #fffdef;
+  --colorRed: #e95d5d;
+  --colorGreen: #52870f;
+  --colorWhite: #ffffff;
+  --colorLogoBody: #6FA68C;
+  --colorLogoLeg: #216155;
+  --colorLogoWing: #74CCA2;
+`
+
 const Header = () => {
 
   const loaderData = useLoaderData();
-  
+
   const location = useLocation();
   const pathName = replaceAll(location.pathname, '/', '');
 
@@ -65,7 +93,7 @@ const Header = () => {
   }
 
   function setThemeFuncForUserPrefEvent(e: any) {
-    if(e.matches) {
+    if (e.matches) {
       setColorMode('dark')
     } else {
       setColorMode('light')
@@ -81,11 +109,11 @@ const Header = () => {
     playToggleSound();
 
 
-    if(colorMode === 'unset') {
+    if (colorMode === 'unset') {
       console.log('color mode unset')
-      const {matches: prefersDarkScheme} = window?.matchMedia("(prefers-color-scheme: dark)"); 
+      const { matches: prefersDarkScheme } = window?.matchMedia("(prefers-color-scheme: dark)");
       console.log('color mode unset', prefersDarkScheme)
-      if(prefersDarkScheme) {
+      if (prefersDarkScheme) {
         console.log('Has dark, will switch to ligt')
         setColorMode('light');
         setCookie(COLOR_MODE_KEY, 'light', 360);
@@ -101,7 +129,7 @@ const Header = () => {
       setCookie(COLOR_MODE_KEY, 'light', 360);
     }
 
-    if(colorMode === 'light') {
+    if (colorMode === 'light') {
       setColorMode('dark');
       setCookie(COLOR_MODE_KEY, 'dark', 360);
     }
@@ -111,7 +139,7 @@ const Header = () => {
     <>
       <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
 
-        <Link prefetch="intent"  className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
+        <Link prefetch="intent" className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
           <Logo />
         </Link>
         <nav>
@@ -123,22 +151,41 @@ const Header = () => {
       </header>
 
       {colorMode === 'unset' && (
-        <>
-          <link rel="stylesheet" href={lightStylesUrl} />
-          <link rel="stylesheet" media="(prefers-color-scheme: dark)" href={darkStylesUrl} />
-        </>
+        <style>
+          {`
+            @media (prefers-color-scheme: dark) {
+              :root {
+                ${darkVars}
+              }
+            }
+            
+            @media (prefers-color-scheme: light) {
+              :root {
+                ${lightVars}
+              }
+            }
+            `}
+        </style>
       )}
 
       {colorMode === 'light' && (
-        <>
-          <link rel="stylesheet" href={lightStylesUrl} />
-        </>
+        <style>
+          {`
+            :root {
+              ${lightVars}
+            }
+          `}
+        </style>
       )}
 
       {colorMode === 'dark' && (
-        <>
-          <link rel="stylesheet" href={darkStylesUrl} />
-        </>
+        <style>
+          {`
+          :root {
+            ${darkVars}
+          }
+        `}
+        </style>
       )}
 
       <div className="switch">
