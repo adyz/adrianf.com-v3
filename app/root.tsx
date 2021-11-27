@@ -65,6 +65,13 @@ export default function App() {
   );
 }
 
+const specialMeta = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "http://www.adrianf.com",
+  "logo": "https://res.cloudinary.com/adrianf/image/fetch/f_auto,q_100/https://adrianf.com/images/favicon.png"
+}
+
 function Document({
   children,
   title,
@@ -81,6 +88,12 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
+        <script 
+          type='application/ld+json' 
+          dangerouslySetInnerHTML={{ 
+            __html: `${JSON.stringify(specialMeta)}`
+          }} 
+        />
       </head>
       <body>
         {children}
