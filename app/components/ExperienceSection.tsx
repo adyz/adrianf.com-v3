@@ -4,6 +4,10 @@ import { Link } from "remix";
 export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false, isCollapsable = true }: any) {
   const [isExpanded, setIsExpanded] = React.useState(false);
 
+
+  const baseLogo = `/images/logos/${item.companyLogo}.jpg`;
+  const fullLogo = `https://adrianf.com${baseLogo}`;
+  const cloudinaryLogo = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,h_200,w_200,q_60/${fullLogo}`
   return (
     <section
       className={`
@@ -15,7 +19,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
     >
       <div className="companyLogo">
         <div className="image-wrapper">
-          <img src={`/images/logos/${item.companyLogo}.jpg`} />
+          <img src={cloudinaryLogo} />
         </div>
       </div>
       <div className="title">

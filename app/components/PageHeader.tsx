@@ -18,8 +18,10 @@ export default function PageHeader({ description, children }: {
   children: any;
 }) {
   const {current: image} = useRef(`https://adrianf.com/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`);
-  const {current: resizedImage} = useRef(`https://res.cloudinary.com/adrianf/image/fetch/c_fill,h_640,w_824,q_60/${image}`);
-  const {current: resizedImageMobile} = useRef(`https://res.cloudinary.com/adrianf/image/fetch/c_fill,g_center,h_640,w_412,q_35/${image}`);
+  const {current: resizedImage} 
+    = useRef(`https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,g_center,h_640,w_824,q_45/${image}`);
+  const {current: resizedImageMobile} 
+    = useRef(`https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,g_center,h_640,w_412,q_30/${image}`);
     return (
         <div className="page-header-wrapper">
           <div className="page-header-insides">
