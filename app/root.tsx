@@ -58,7 +58,7 @@ export let loader: LoaderFunction = (props) => {
 export default function App() {
   const data = useLoaderData<{colorMode: TColorMode}>();
   return (
-    <Document>
+    <Document colorMode={data.colorMode}>
       <Layout colorMode={data.colorMode}>
         <Outlet />
       </Layout>
@@ -68,15 +68,18 @@ export default function App() {
 
 function Document({
   children,
-  title
+  title,
+  colorMode
 }: {
   children: React.ReactNode;
   title?: string;
+  colorMode: TColorMode
 }) {
   return (
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
+        <meta name="theme-color" content={colorMode === 'light' ? '#fffdef' : '#434238'} />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         {title ? <title>{title}</title> : null}
         <Meta />
