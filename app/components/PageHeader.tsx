@@ -31,7 +31,7 @@ export default function PageHeader({ description, children }: {
               <picture>
                 <source media="(max-width: 799px)" srcSet={resizedImageMobile} />
                 <source media="(min-width: 800px)" srcSet={resizedImage} />
-                <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva" />
+                <img src={resizedImage} alt="Chris standing up holding his daughter Elva" />
               </picture>
               </div>
           </div>
