@@ -23,6 +23,7 @@ export let loader = () => {
 export default function Page() {
     const data = useLoaderData()
     const description = `I write from time to time. Read my thoughts to know me better`;
+    
     return (
         <div className="page-wrapper">
 
@@ -35,6 +36,7 @@ export default function Page() {
 
                 <div className="articles">
                     {data && data.length > 0 && data.map((article: any, articleIndex: any) => {
+                        const articleImgRes =`https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,g_center,h_420,w_1400,q_30/${article.thumb}`
                         return (
                             <a
                                 key={articleIndex}
@@ -44,7 +46,7 @@ export default function Page() {
                                 className="article"
                             >
                                 <span className="thumb">
-                                    <img src={article.thumb} loading="lazy" alt={article.title} />
+                                    <img width="100%" height="100%" src={articleImgRes} loading="lazy" alt={article.title} />
                                 </span>
                                 <span className="titleAndDate">
                                     <span className="link-icon">

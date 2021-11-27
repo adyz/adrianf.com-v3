@@ -147,7 +147,7 @@ export function CatchBoundary() {
   }
 
   return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
+    <Document colorMode={'light'} title={`${caught.status} ${caught.statusText}`}>
       <Layout colorMode={'light'}>
         <div className="notFoundWrapper">
           <div className="notFound">
@@ -167,7 +167,7 @@ export function CatchBoundary() {
 
 export function ErrorBoundary({ error, request }: { error: Error, request: any }) {
   return (
-    <Document title="Error!">
+    <Document colorMode={'light'} title="Error!">
 
       <Layout colorMode={'light'}>
         <div className="notFoundWrapper">
