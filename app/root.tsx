@@ -106,7 +106,7 @@ function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TCo
       <footer>
 
         <div className="profile">
-          <img src={resizedProfileImage} alt="Adrian Florescu" />
+          <img width="100%" height="100%" src={resizedProfileImage} alt="Adrian Florescu" />
         </div>
         <div className="copy">
           <p> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>

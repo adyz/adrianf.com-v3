@@ -572,7 +572,7 @@ header nav a {
     color: var(--colorLightBrown)
 }
 
-.sectionExperience section .milestones h4 {
+.sectionExperience section .milestones .sec-heading {
     font-size: calc(.75rem + .3vw);
     line-height: 1.55;
     color: var(--colorLightBrown);
@@ -607,7 +607,7 @@ header nav a {
     color: var(--colorLightBrown)
 }
 
-.sectionExperience section .technologies h4 {
+.sectionExperience section .technologies .sec-heading {
     font-size: calc(.75rem + .3vw);
     line-height: 1.55;
     color: var(--colorLightBrown);

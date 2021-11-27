@@ -19,7 +19,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
     >
       <div className="companyLogo">
         <div className="image-wrapper">
-          <img src={cloudinaryLogo} />
+          <img width="100%" height="100%" src={cloudinaryLogo} />
         </div>
       </div>
       <div className="title">
@@ -40,7 +40,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
       <div className={`expandable ${isExpanded || full ? 'is-expanded' : 'is-collapsed'}`}>
         {item.milestones && (
           <div className="milestones">
-            <h4>Milestones: </h4>
+            <p className="sec-heading">Milestones: </p>
             <ul>
               {item.milestones.map((mile: any, mileI: any) => {
                 return <div key={`mile-${mileI}`}>
@@ -58,7 +58,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
 
         {item.technologies.length > 0 && (
           <div className="technologies">
-            <h4>Used: </h4>
+            <p className="sec-heading">Used: </p>
             <ul>
               {item.technologies.map((tech: any, techI: any) => {
                 return <li key={`tech-${techI}`}>{tech}</li>
