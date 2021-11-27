@@ -31,9 +31,9 @@ export default function PageHeader({ description, children }: {
               </div>
               <div className="image">
               <picture>
-                <source media="(max-width: 799px)" srcSet={resizedImageMobile} />
-                <source media="(min-width: 800px)" srcSet={resizedImage} />
-                <img src={resizedImage} alt="Chris standing up holding his daughter Elva" />
+                <source width="100%" height="100%" media="(max-width: 799px)" srcSet={resizedImageMobile} />
+                <source width="100%" height="100%" media="(min-width: 800px)" srcSet={resizedImage} />
+                <img width="100%" height="100%" src={resizedImage} alt="Random image" />
               </picture>
               </div>
           </div>
