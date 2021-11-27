@@ -47,7 +47,7 @@ export let loader: LoaderFunction = (props) => {
   const colorMode = getCookie(COLOR_MODE_KEY, cookieString);
   
   
-  return json({colorMode: colorMode ? colorMode : 'light'});
+  return json({colorMode: colorMode ? colorMode : 'unset'});
 };
 
 /**
@@ -56,10 +56,9 @@ export let loader: LoaderFunction = (props) => {
  * component for your app.
  */
 export default function App() {
-  const data = useLoaderData<{colorMode: TColorMode}>();
   return (
-    <Document colorMode={data.colorMode}>
-      <Layout colorMode={data.colorMode}>
+    <Document>
+      <Layout>
         <Outlet />
       </Layout>
     </Document>
@@ -69,11 +68,9 @@ export default function App() {
 function Document({
   children,
   title,
-  colorMode
 }: {
   children: React.ReactNode;
   title?: string;
-  colorMode: TColorMode
 }) {
   return (
     <html lang="en">
@@ -96,13 +93,13 @@ function Document({
   );
 }
 
-function Layout({ children, colorMode }: React.PropsWithChildren<{colorMode: TColorMode}>) {
+function Layout({ children }: React.PropsWithChildren<{}>) {
   const profileImage = `http://adrianf.com/images/profile.jpeg`;
   const resizedProfileImage = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,h_800,w_800,q_60/${profileImage}`
   const resizedProfileImageMobile = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,h_400,w_400,q_60/${profileImage}`
   return (
     <>
-      <Header initialColorMode={colorMode} />
+      <Header />
       <main>{children}</main>
       <footer>
 
@@ -147,8 +144,8 @@ export function CatchBoundary() {
   }
 
   return (
-    <Document colorMode={'light'} title={`${caught.status} ${caught.statusText}`}>
-      <Layout colorMode={'light'}>
+    <Document title={`${caught.status} ${caught.statusText}`}>
+      <Layout>
         <div className="notFoundWrapper">
           <div className="notFound">
             <VectorCharacter404 />
@@ -167,9 +164,9 @@ export function CatchBoundary() {
 
 export function ErrorBoundary({ error, request }: { error: Error, request: any }) {
   return (
-    <Document colorMode={'light'} title="Error!">
+    <Document title="Error!">
 
-      <Layout colorMode={'light'}>
+      <Layout>
         <div className="notFoundWrapper">
           <div className="notFound">
             <VectorCharacter404 />

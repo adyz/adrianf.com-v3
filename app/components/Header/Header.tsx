@@ -3,7 +3,10 @@ import { useSpring, animated } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import useSound from 'use-sound';
 
-import { Link, useLocation } from "remix";
+import darkStylesUrl from "~/styles/dark.css";
+import lightStylesUrl from "~/styles/light.css";
+
+import { Link, useLocation, useLoaderData } from "remix";
 
 import Logo from "./Logo";
 import Switch from "./Switch";
@@ -17,16 +20,19 @@ function replaceAll(originalString: string, find: string, replace: string) {
   return originalString.replace(new RegExp(find, 'g'), replace);
 };
 
-const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialColorMode: TColorMode }) => {
+const Header = () => {
 
+  const loaderData = useLoaderData();
+  
   const location = useLocation();
   const pathName = replaceAll(location.pathname, '/', '');
 
   const [isSticky, setSticky] = useState(false);
-  const [colorMode, setColorMode] = useState<TColorMode>(initialColorMode);
+  const [colorMode, setColorMode] = useState<TColorMode>(loaderData.colorMode);
   const [{ x, y }, set] = useSpring(() => ({ x: 0, y: 0 }))
   const [toggled, setToggled] = useState(false);
   const [playToggleSound] = useSound(soundToggle, { volume: 0.1 });
+
 
   // Set the drag hook and define component movement based on gesture data
   const bind = useGesture({
@@ -58,8 +64,8 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
     return null;
   }
 
-  function setThemeFuncForUserPrefEvent(e: any) {
-    if (e.matches) {
+  function setThemeFuncForUserPrefEvent(e) {
+    if(e.matches) {
       setColorMode('dark')
     } else {
       setColorMode('light')
@@ -73,15 +79,33 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
   function toggle() {
     console.log('Toggle');
     playToggleSound();
+
+
+    if(colorMode === 'unset') {
+      console.log('color mode unset')
+      const {matches: prefersDarkScheme} = window?.matchMedia("(prefers-color-scheme: dark)"); 
+      console.log('color mode unset', prefersDarkScheme)
+      if(prefersDarkScheme) {
+        console.log('Has dark, will switch to ligt')
+        setColorMode('light');
+        setCookie(COLOR_MODE_KEY, 'light', 360);
+      } else {
+        console.log('Has light, will switch to dark')
+        setColorMode('dark');
+        setCookie(COLOR_MODE_KEY, 'dark', 360);
+      }
+    }
+
     if (colorMode === 'dark') {
       setColorMode('light');
       setCookie(COLOR_MODE_KEY, 'light', 360);
-    } else {
+    }
+
+    if(colorMode === 'light') {
       setColorMode('dark');
       setCookie(COLOR_MODE_KEY, 'dark', 360);
     }
   }
-
 
   return (
     <>
@@ -98,44 +122,23 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
         </nav>
       </header>
 
-      {colorMode === 'light' ? (
-        <style>
-          {`
-          :root {
-            --colorBorder: #eeebd8;
-            --colorBrown: #543416;
-            --colorLightBrown: #865E5E;
-            --colorLigherBrown: #AEA092;
-            --colorSuperLigherBrown: #E7D7C8;
-            --colorBg: #fffdef;
-            --colorRed: #e95d5d;
-            --colorGreen: #52870f;
-            --colorWhite: #ffffff;
-            --colorLogoBody: #6FA68C;
-            --colorLogoLeg: #216155;
-            --colorLogoWing: #74CCA2;
-          }
-          `}
-        </style>
-      ) : (
-        <style>
-          {`
-          :root {
-            --colorBorder: #3a3a30;
-            --colorBrown: #F5EFB9;
-            --colorLightBrown: #9F9C7D;
-            --colorLigherBrown: #716E59;
-            --colorSuperLigherBrown: #525040;
-            --colorBg: #434238;
-            --colorRed: #9F9C7D;
-            --colorGreen: #52870f;
-            --colorWhite: #28281F;
-            --colorLogoBody: #6FA68C;
-            --colorLogoLeg: #216155;
-            --colorLogoWing: #74CCA2;
-          }
-          `}
-        </style>
+      {colorMode === 'unset' && (
+        <>
+          <link rel="stylesheet" href={lightStylesUrl} />
+          <link rel="stylesheet" media="(prefers-color-scheme: dark)" href={darkStylesUrl} />
+        </>
+      )}
+
+      {colorMode === 'light' && (
+        <>
+          <link rel="stylesheet" href={lightStylesUrl} />
+        </>
+      )}
+
+      {colorMode === 'dark' && (
+        <>
+          <link rel="stylesheet" href={darkStylesUrl} />
+        </>
       )}
 
       <div className="switch">
