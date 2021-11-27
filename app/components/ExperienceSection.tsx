@@ -74,7 +74,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
       </div>
 
       {!full && isCollapsable && <button className="expandButton" onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? 'Collapse back' : 'Read more'}</button>}
-      {!full && !isCollapsable && <Link className="expandButton" to={`/${item.title}`}>Read More</Link>}
+      {!full && !isCollapsable && <Link className="expandButton" to={`${item.companyLogo}`} title={`Exp @ ${item.company}`}>Read more</Link>}
     </section>
   )
 }
