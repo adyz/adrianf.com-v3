@@ -87,14 +87,14 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
     <>
       <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
 
-        <Link className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
+        <Link prefetch="intent"  className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
           <Logo />
         </Link>
         <nav>
-          <Link className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
-          <Link className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
-          <Link className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
-          <Link className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
+          <Link prefetch="intent" className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
+          <Link prefetch="intent" className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
+          <Link prefetch="intent" className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
+          <Link prefetch="intent" className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
         </nav>
       </header>
 
