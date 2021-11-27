@@ -19,7 +19,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
     >
       <div className="companyLogo">
         <div className="image-wrapper">
-          <img width="100%" height="100%" src={cloudinaryLogo} />
+          <img width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
         </div>
       </div>
       <div className="title">
@@ -43,15 +43,18 @@ export default function ExperienceSection({ first = false, last = false, home = 
             <p className="sec-heading">Milestones: </p>
             <ul>
               {item.milestones.map((mile: any, mileI: any) => {
-                return <div key={`mile-${mileI}`}>
-                  {item.milestones.length > 1 && (<p>{mile.title}</p>)}
-                  <ul>
-                    {mile.items.map((subMile: any, submileI: any) => {
-                      return <li key={`submile-${submileI}`}>{subMile}</li>
-                    })}
-                  </ul>
-                </div>
-              })}
+                return (
+                  <li key={`mile-${mileI}`}>
+                    {item.milestones.length > 1 && (<p>{mile.title}</p>)}
+                    <ul>
+                      {mile.items.map((subMile: any, submileI: any) => {
+                        return (
+                          <li key={`submile-${submileI}`}>{subMile}</li>
+                        )
+                      })}
+                    </ul>
+                  </li>
+                )})}
             </ul>
           </div>
         )}

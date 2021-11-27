@@ -87,7 +87,7 @@ const Header = ({ siteTitle, initialColorMode }: { siteTitle: string, initialCol
     <>
       <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
 
-        <Link className={`logo ${pathName === '' && 'is-active'}`} title={siteTitle} to="/">
+        <Link className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
           <Logo />
         </Link>
         <nav>
