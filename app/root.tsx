@@ -19,7 +19,7 @@ import globalStylesUrl from "~/styles/global.css";
 
 import Header from "./components/Header/Header"
 import VectorCharacter404 from "./components/VectorCharacter404"
-import { COLOR_MODE_KEY, TColorMode } from "./constants";
+import { COLOR_MODE_KEY } from "./constants";
 import { getCookie } from "./utils/cookie";
 
 /**

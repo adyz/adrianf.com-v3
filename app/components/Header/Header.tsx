@@ -28,7 +28,7 @@ const Header = () => {
   const pathName = replaceAll(location.pathname, '/', '');
 
   const [isSticky, setSticky] = useState(false);
-  const [colorMode, setColorMode] = useState<TColorMode>(loaderData.colorMode);
+  const [colorMode, setColorMode] = useState<TColorMode>(loaderData?.colorMode ? loaderData.colorMode : 'unset');
   const [{ x, y }, set] = useSpring(() => ({ x: 0, y: 0 }))
   const [toggled, setToggled] = useState(false);
   const [playToggleSound] = useSound(soundToggle, { volume: 0.1 });
