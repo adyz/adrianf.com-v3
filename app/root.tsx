@@ -10,7 +10,7 @@ import {
   useCatch,
   useLocation,
   json,
-  useLoaderData
+  useTransition
 } from "remix";
 import * as React from 'react';
 import type { LinksFunction } from "remix";
@@ -40,6 +40,16 @@ export let links: LinksFunction = () => {
     }
   ];
 };
+
+
+function LoaderStuff(){
+  const transition = useTransition();
+  return (
+    <>
+      {transition.state === 'loading' && <div className="loading"><span></span><span></span></div>}
+    </>
+  )
+}
 
 export let loader: LoaderFunction = (props) => {
   const realCookieString = props.request.headers.get('cookie');
@@ -97,6 +107,7 @@ function Document({
       </head>
       <body>
         {children}
+        <LoaderStuff />
         <RouteChangeAnnouncement />
         <ScrollRestoration />
         <Scripts />
