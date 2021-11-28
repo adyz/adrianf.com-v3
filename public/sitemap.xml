@@ -1,62 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <url>
-    <loc>https://adrianf.com/</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/tech-stack</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/experience</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/thoughts</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/contact</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/experience/explorado</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/experience/ibm</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/experience/vivre</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/experience/adrianf</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/experience/landmark</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://adrianf.com/experience/prologue</loc>
-    <lastmod>2021-11-28T11:11:25+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
+
+<url>
+  <loc>https://adrianf.com/</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/tech-stack</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/thoughts</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/contact</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience/explorado</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience/ibm</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience/vivre</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience/adrianf</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience/landmark</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience/prologue</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://adrianf.com/experience/freelancer</loc>
+  <lastmod>2021-11-28T11:43:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
 
 </urlset>
