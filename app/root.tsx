@@ -36,7 +36,7 @@ export let links: LinksFunction = () => {
     {
       rel: "icon",
       type: "image/png",
-      href: "https://res.cloudinary.com/adrianf/image/fetch/f_auto,q_10/https://adrianf.com/images/favicon.png"
+      href: "/images/favicon.png"
     }
   ];
 };
