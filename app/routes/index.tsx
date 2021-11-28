@@ -4,13 +4,15 @@ import VectorCharacter from "../components/VectorCharacter"
 import Boop from '../components/Boop';
 import {getSocialMetas} from '../utils/seo/meta';
 
+const description = "I am a Front-end Developer living in Bucharest, Romania. I've been designing and coding user interfaces for the web in the last decade using HTML, CSS, and JS."
+
 export let meta: MetaFunction = ({location}) => {
   return {
     ...getSocialMetas({
       image: 'https://adrianf.com/images/profile.jpeg',
       url: location.pathname,
       title: "Adrian Florescu - Front-end Developer - Bucharest - Romania",
-      description: "Welcome to Adrianf.com - Front-end Developer - Bucharest, Romania",
+      description,
       keywords: "adrian, adrian florescu, florescu, homepage, html, css, js, typescript, remix, react, romania, bucharest, front-end development"
     })
   };
@@ -30,7 +32,7 @@ export default function Index() {
           </div>
           <div className="sectionWelcomeText__introDescription">
             <p>
-              I am a Front-end Developer living in Bucharest, Romania. I've been designing and coding user interfaces for the web in the last decade using HTML, CSS, and JS.
+              {description}
             </p>
           </div>
           <div className="sectionWelcomeText__introButtons">
