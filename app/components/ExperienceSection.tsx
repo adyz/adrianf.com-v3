@@ -23,7 +23,12 @@ export default function ExperienceSection({ first = false, last = false, home = 
         </div>
       </div>
       <div className="title">
-        <Link className="heading" to={`./${item.companyLogo}`}>{item.title}</Link>
+        {full ? (
+            <p className="heading">{item.title}</p>
+        ) : (
+            <Link className="heading" to={`./${item.companyLogo}`}>{item.title}</Link>
+        )}
+        
         <p className="company">{item.company}</p>
         <p className="time">
           {item.period.start} -{" "}
