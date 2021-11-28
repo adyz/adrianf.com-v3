@@ -1051,14 +1051,14 @@ footer .profile img {
     width: 100%;
     height: 4px;
     background: var(--colorSuperLigherBrown);
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     top: 0;
     left: 0;
     z-index: 299;
     opacity: 0;
-    animation: fadeIn .3s forwards;
-    animation-delay: .3s;
+    animation: fadeIn .5s forwards;
+    animation-delay: .25s;
   }
 
   @keyframes fadeIn {
