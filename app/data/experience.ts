@@ -143,7 +143,7 @@ It was a challenging experience and I've learned a ton of JS while building the 
   {
     title: "Designer & Developer",
     company: "Freelancer",
-    companyLogo: "adrianf-freelancer",
+    companyLogo: "freelancer",
     period: {
       start: formatDate(new Date("Jan 01, 2007")),
       end: formatDate(new Date("Dec 01, 2011")),
