@@ -136,18 +136,6 @@ const Header = () => {
   }
   return (
     <>
-      <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
-
-        <Link prefetch="intent" className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
-          <Logo />
-        </Link>
-        <nav>
-          <Link prefetch="intent" className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
-          <Link prefetch="intent" className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
-          <Link prefetch="intent" className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
-          <Link prefetch="intent" className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
-        </nav>
-      </header>
 
       {colorMode === 'unset' && (
         <style>
@@ -187,11 +175,24 @@ const Header = () => {
         </style>
       )}
 
+      <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
+
+        <Link prefetch="intent" className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
+          <Logo />
+        </Link>
+        <nav>
+          <Link prefetch="intent" className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
+          <Link prefetch="intent" className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
+          <Link prefetch="intent" className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
+          <Link prefetch="intent" className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
+        </nav>
+      </header>
+
       <div className="switch">
         <div className="switch__base">
           <SwitchBase />
         </div>
-        <animated.div className="switch__chain" {...bind()} style={{ transform: y.interpolate((y) => `translate3d(0px,${y}px,0)`) }}>
+        <animated.div className="switch__chain" {...bind()} style={{ transform: y.to((y) => `translate3d(0px,${y}px,0)`) }}>
           <Switch />
         </animated.div>
       </div>
