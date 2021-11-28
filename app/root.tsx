@@ -69,7 +69,7 @@ const specialMeta = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "url": "http://www.adrianf.com",
-  "logo": "https://res.cloudinary.com/adrianf/image/fetch/f_auto,q_100/https://adrianf.com/images/favicon.png"
+  "logo": "https://adrianf.com/logo.svg"
 }
 
 function Document({

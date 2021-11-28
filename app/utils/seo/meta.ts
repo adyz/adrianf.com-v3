@@ -1,7 +1,7 @@
 import { getRandomInt } from '../../components/PageHeader';
 
 function generateImageMeta(text: string) {
-    return `https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,h_630,w_1200/l_text:Arial_38_bold:${text},co_white/https://adrianf-v3.netlify.app/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
+    return `https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,h_630,w_1200/l_text:Arial_38_bold:${text},co_white/https://adrianf.com/images/responsive-headers/${getRandomInt(1, 8)}-m.jpg`
 }
 
 export function resizeImage(imagePath: string) {
