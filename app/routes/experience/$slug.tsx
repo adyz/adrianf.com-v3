@@ -25,7 +25,9 @@ export let loader: LoaderFunction = ({ request, params }) => {
     if(myExperience) {
         return json(myExperience)
     } else {
-        return new Error('No page found');
+        return new Response('No page found', {
+            status: 404
+        });
     }
     
 }

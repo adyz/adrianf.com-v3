@@ -3,7 +3,7 @@ import { useSpring, animated } from '@react-spring/web'
 import { useGesture } from 'react-use-gesture'
 import useSound from 'use-sound';
 
-import { Link, useLocation, useLoaderData } from "remix";
+import { Link, useLocation, useLoaderData, useTransition } from "remix";
 
 import Logo from "./Logo";
 import Switch from "./Switch";
@@ -51,6 +51,7 @@ const lightVars = `
 const Header = () => {
 
   const loaderData = useLoaderData();
+  const transition = useTransition();
 
   const location = useLocation();
   const pathName = replaceAll(location.pathname, '/', '');
@@ -134,6 +135,8 @@ const Header = () => {
       setCookie(COLOR_MODE_KEY, 'dark', 360);
     }
   }
+
+  const linkStyle = {transition: 'all .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1'}
   return (
     <>
 
@@ -176,15 +179,14 @@ const Header = () => {
       )}
 
       <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
-
-        <Link prefetch="intent" className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
+        <Link style={linkStyle} prefetch="intent" className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
           <Logo />
         </Link>
         <nav>
-          <Link prefetch="intent" className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
-          <Link prefetch="intent" className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
-          <Link prefetch="intent" className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
-          <Link prefetch="intent" className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
+          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
+          <Link style={linkStyle} prefetch="intent" className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
+          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
+          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
         </nav>
       </header>
 
