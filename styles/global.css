@@ -59,36 +59,6 @@ div:target {
   fill: var(--colorLogoWing)
 }
 
-.globalButton,.sectionWelcomeText__introButtons button {
-  border: none;
-  text-align: center;
-  border-radius: 8px;
-  text-transform: uppercase;
-  background: var(--colorGreen);
-  color: #fff;
-  padding: calc(.5rem + .3vw) 1.4rem;
-  font-size: calc(.5rem + .3vw);
-  letter-spacing: 2px;
-  font-weight: 700;
-  margin: 0;
-  box-shadow: 0 4px 4px rgba(0,0,0,.1);
-  cursor: pointer;
-  outline: none
-}
-
-.globalButton:hover,.sectionWelcomeText__introButtons button:hover {
-  box-shadow: 0 6px 6px rgba(0,0,0,.1)
-}
-
-.globalButton:active,.sectionWelcomeText__introButtons button:active {
-  box-shadow: 0 2px 2px rgba(0,0,0,.1)
-}
-
-.globalButton.secondary,.sectionWelcomeText__introButtons button.secondary {
-  background: var(--colorWhite);
-  color: var(--colorRed)
-}
-
 .switch {
   position: absolute;
   z-index: 3;
@@ -189,36 +159,6 @@ div:target {
   font-size: calc(.7rem + .5vw);
   line-height: 1.5;
   color: var(--colorLightBrown)
-}
-
-.sectionWelcomeText__introButtons {
-  display: flex;
-  flex-grow: 1
-}
-
-.sectionWelcomeText__introButtons button.button__contact {
-  background: var(--colorWhite);
-  color: var(--colorRed);
-  margin-left: .8rem
-}
-
-.sectionWelcomeText__introButtons button.button__readMore {
-  position: relative
-}
-
-.sectionWelcomeText__introButtons button.button__readMore:before {
-  content: attr(data-description);
-  position: absolute;
-  display: block;
-  color: var(--colorLightBrown);
-  text-transform: none;
-  letter-spacing: 0;
-  top: calc(3.5rem + .7vw);
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-weight: 100;
-  font-size: calc(.6rem + .2vw)
 }
 
 .sectionTechStackWrapper {

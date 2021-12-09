@@ -136,9 +136,9 @@ const Header = () => {
     }
   }
 
-  const linkStyle = { transition: 'all .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1' }
+  const linkStyle = { transition: 'opacity .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1' }
 
- 
+
   const NAV_LINKS = [{
     label: 'Tech Stack',
     link: 'tech-stack'
@@ -175,7 +175,7 @@ const Header = () => {
               flex
               items-center
               hover:bg-colorBorder
-              ${pathName === link && 'bg-colorBorder'}
+              ${(pathName === link || pathName.startsWith(link)) && 'bg-colorBorder'}
             `}
         to={link}
       >
@@ -235,7 +235,7 @@ const Header = () => {
         
         py-2
         px-3
-        md:px-5
+        md:px-8
         
         ${isSticky ? ' shadow-md' : 'shadow-sm'}
       `}>
@@ -261,7 +261,7 @@ const Header = () => {
         </nav>
       </header>
 
-      <div className="switch left-2.5 top-14 md:top-16 md:left-5">
+      <div className="switch left-2.5 top-14 md:top-16 md:left-9">
         <div className="switch__base">
           <SwitchBase />
         </div>

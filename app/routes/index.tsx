@@ -35,14 +35,16 @@ export default function Index() {
               {description}
             </p>
           </div>
-          <div className="sectionWelcomeText__introButtons">
+          <div className="flex flex-1 gap-3">
             <Boop y={2}>
               <button
                 onClick={() => {
                   window.location.href = "./Resume-Adrian-Florescu.pdf";
                 }}
-                className="button__readMore"
-                data-description="Or click on the links in the top right corner 🚀"
+                className="
+                  uppercase py-2 px-8 rounded-md font-bold text-sm border-0 tracking-wider shadow-lg
+                  cursor-pointer bg-colorGreen text-[#fff]
+                "
               >
                 Download Resume
               </button>
@@ -52,7 +54,10 @@ export default function Index() {
                 onClick={() => {
                   navigate("/contact/")
                 }}
-                className="button__contact"
+                className="
+                  uppercase py-2 px-8 rounded-md font-bold text-sm border-0 tracking-wider shadow-lg 
+                  cursor-pointer bg-colorWhite text-colorRed
+                "
               >
                 Contact me
               </button>
