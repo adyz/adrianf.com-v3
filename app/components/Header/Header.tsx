@@ -175,7 +175,7 @@ const Header = () => {
               flex
               items-center
               hover:bg-colorBorder
-              hover:outline-black
+              active:bg-colorSuperLigherBrown
               ${(pathName === link || pathName.startsWith(link)) && 'bg-colorBorder'}
             `}
         to={link}
@@ -248,6 +248,7 @@ const Header = () => {
               justify-center items-center p-2
               overflow-hidden
               hover:bg-colorBorder
+              active:bg-colorSuperLigherBrown
               ${pathName === '' && 'bg-colorBorder'}`
           }
           title={'Home Link'} to="/"
