@@ -137,6 +137,17 @@ const Header = () => {
   }
 
   const linkStyle = {transition: 'all .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1'}
+  const linksClassName = `
+    text-colorBrown  tracking-wide no-underline 
+    py-2 
+    px-3 sm:px-6 
+    text-xs sm:text-lg 
+    rounded-md
+    bg-opacity-50
+    bg-colorBrownActive
+  `
+  const activeClassName = 'bg-colorSuperLigherBrown'
+
   return (
     <>
 
@@ -178,15 +189,76 @@ const Header = () => {
         </style>
       )}
 
-      <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
-        <Link style={linkStyle} prefetch="intent" className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
+      <header className={`
+        fixed z-10 bg-colorBg
+        flex items-center shadow-sm
+        w-full
+        h-[60px]
+        sm:h-[72px]
+        justify-between
+        px-1
+        py-2
+        sm:px-9
+        ${isSticky ? ' shadow-md' : 'shadow-sm'}
+      `}>
+        <Link 
+          style={linkStyle} 
+          prefetch="intent" 
+          className={`
+              w-20 h-full flex rounded-lg justify-center items-center p-1 
+              overflow-hidden
+              ${pathName === '' && activeClassName}`
+            } 
+          title={'Home Link'} to="/"
+          >
           <Logo />
         </Link>
-        <nav>
-          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
-          <Link style={linkStyle} prefetch="intent" className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
-          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
-          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
+        <nav className="flex">
+          <Link 
+            style={linkStyle} 
+            prefetch="intent" 
+            className={`
+              ${linksClassName}
+              ${pathName === 'tech-stack' && activeClassName}
+            `} 
+            to={`/tech-stack`}
+          >
+              TechStack
+            </Link>
+            <Link 
+              style={linkStyle} 
+              prefetch="intent" 
+              className={`
+                ${linksClassName}
+                ${(pathName === 'experience' || pathName.includes('experience')) && activeClassName}
+              `} 
+              to={`/experience`}
+            >
+              Experience
+            </Link>
+            <Link 
+              style={linkStyle} 
+              prefetch="intent" 
+              className={`
+                ${linksClassName}
+                
+                ${pathName === 'thoughts' && activeClassName}
+              `} 
+              to={`/thoughts`}
+            >
+              Thoughts
+            </Link>
+            <Link 
+              style={linkStyle} 
+              prefetch="intent" 
+              className={`
+                ${linksClassName}
+                ${pathName === 'contact' && activeClassName}
+              `} 
+              to={`/contact`}
+              >
+                Contact
+            </Link>
         </nav>
       </header>
 

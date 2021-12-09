@@ -15,7 +15,7 @@ import {
 import * as React from 'react';
 import type { LinksFunction } from "remix";
 
-import globalStylesUrl from "~/styles/global.css";
+import globalStylesUrl from "~/styles_dist/global.css";
 
 import Header from "./components/Header/Header"
 import VectorCharacter404 from "./components/VectorCharacter404"
