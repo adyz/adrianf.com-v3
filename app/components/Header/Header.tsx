@@ -175,6 +175,7 @@ const Header = () => {
               flex
               items-center
               hover:bg-colorBorder
+              hover:outline-black
               ${(pathName === link || pathName.startsWith(link)) && 'bg-colorBorder'}
             `}
         to={link}
@@ -243,11 +244,10 @@ const Header = () => {
           style={linkStyle}
           prefetch="intent"
           className={`
-          
-              
               h-full w-16 md:w-20 flex rounded-lg 
               justify-center items-center p-2
               overflow-hidden
+              hover:bg-colorBorder
               ${pathName === '' && 'bg-colorBorder'}`
           }
           title={'Home Link'} to="/"
