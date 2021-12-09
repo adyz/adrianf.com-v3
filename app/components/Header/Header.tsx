@@ -136,17 +136,53 @@ const Header = () => {
     }
   }
 
-  const linkStyle = {transition: 'all .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1'}
-  const linksClassName = `
-    text-colorBrown  tracking-wide no-underline 
-    py-2 
-    px-3 sm:px-6 
-    text-xs sm:text-lg 
-    rounded-md
-    bg-opacity-50
-    bg-colorBrownActive
-  `
-  const activeClassName = 'bg-colorSuperLigherBrown'
+  const linkStyle = { transition: 'all .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1' }
+
+ 
+  const NAV_LINKS = [{
+    label: 'Tech Stack',
+    link: 'tech-stack'
+  },
+  {
+    label: 'Experience',
+    link: 'experience'
+  },
+  {
+    label: 'Thoughts',
+    link: 'thoughts'
+  },
+  {
+    label: 'Contact',
+    link: 'contact'
+  }]
+
+
+  function LinkItem({ label, link }: { label: string; link: string }) {
+    return (
+      <Link
+        style={linkStyle}
+        prefetch="intent"
+        className={`
+              text-xs md:text-lg lg:text-xl
+              text-colorBrown
+              tracking-wide 
+              no-underline 
+              py-2 
+              px-1.5 md:px-3 lg:px-6
+              rounded-md
+              border border-transparent border-solid
+              text-center
+              flex
+              items-center
+              hover:bg-colorBorder
+              ${pathName === link && 'bg-colorBorder'}
+            `}
+        to={link}
+      >
+        {label}
+      </Link>
+    )
+  }
 
   return (
     <>
@@ -196,73 +232,36 @@ const Header = () => {
         h-[60px]
         sm:h-[72px]
         justify-between
-        px-1
+        
         py-2
-        sm:px-9
+        px-3
+        md:px-5
+        
         ${isSticky ? ' shadow-md' : 'shadow-sm'}
       `}>
-        <Link 
-          style={linkStyle} 
-          prefetch="intent" 
+        <Link
+          style={linkStyle}
+          prefetch="intent"
           className={`
-              w-20 h-full flex rounded-lg justify-center items-center p-1 
+          
+              
+              h-full w-16 md:w-20 flex rounded-lg 
+              justify-center items-center p-2
               overflow-hidden
-              ${pathName === '' && activeClassName}`
-            } 
+              ${pathName === '' && 'bg-colorBorder'}`
+          }
           title={'Home Link'} to="/"
-          >
+        >
           <Logo />
         </Link>
         <nav className="flex">
-          <Link 
-            style={linkStyle} 
-            prefetch="intent" 
-            className={`
-              ${linksClassName}
-              ${pathName === 'tech-stack' && activeClassName}
-            `} 
-            to={`/tech-stack`}
-          >
-              TechStack
-            </Link>
-            <Link 
-              style={linkStyle} 
-              prefetch="intent" 
-              className={`
-                ${linksClassName}
-                ${(pathName === 'experience' || pathName.includes('experience')) && activeClassName}
-              `} 
-              to={`/experience`}
-            >
-              Experience
-            </Link>
-            <Link 
-              style={linkStyle} 
-              prefetch="intent" 
-              className={`
-                ${linksClassName}
-                
-                ${pathName === 'thoughts' && activeClassName}
-              `} 
-              to={`/thoughts`}
-            >
-              Thoughts
-            </Link>
-            <Link 
-              style={linkStyle} 
-              prefetch="intent" 
-              className={`
-                ${linksClassName}
-                ${pathName === 'contact' && activeClassName}
-              `} 
-              to={`/contact`}
-              >
-                Contact
-            </Link>
+          {NAV_LINKS.map((currentItem) => {
+            return <LinkItem {...currentItem} />
+          })}
         </nav>
       </header>
 
-      <div className="switch">
+      <div className="switch left-2.5 top-14 md:top-16 md:left-5">
         <div className="switch__base">
           <SwitchBase />
         </div>

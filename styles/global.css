@@ -94,21 +94,11 @@ div:target {
   z-index: 3;
   width: 70px;
   text-align: center;
-  top: 4rem;
   display: flex;
-  margin-left: 3rem;
   will-change: transform;
   cursor: grab;
   touch-action: none;
   filter: drop-shadow(-6px -9px 0 rgba(0,0,0,.05))
-}
-
-@media (max-width: 720px) {
-  .switch {
-      top:3rem;
-      width: 52px;
-      margin-left: .5rem
-  }
 }
 
 .switch__base {
@@ -138,79 +128,6 @@ div:target {
   margin-top: -300px
 }
 
-
-header a.is-active {
-  background: rgba(0,0,0,.05)
-}
-
-/* 
-header {
-  position: fixed;
-  top: 0;
-  z-index: 222;
-  padding: .5rem 2.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--colorBg);
-  box-shadow: 0 2px 8px rgba(0,0,0,.02)
-}
-
-@media (max-width: 720px) {
-  header {
-      padding:.5rem
-  }
-}
-
-header.is-sticky {
-  box-shadow: 0 2px 8px rgba(0,0,0,.1)
-}
-
-
-
-header .logo {
-  width: 80px;
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  vertical-align: middle;
-  border-radius: 8px;
-  padding: .5rem
-}
-
-@media (max-width: 720px) {
-  header .logo {
-      width:52px;
-      padding: .3rem
-  }
-}
-
-header .logo svg {
-  height: 100%
-}
-
-header nav {
-  padding-top: 0;
-  padding-bottom: 0;
-  display: flex
-}
-
-header nav a {
-  text-align: center;
-  font-size: calc(.6rem + .5vw);
-  color: var(--colorBrown);
-  text-decoration: none;
-  padding: .9rem calc(.9rem + 1vw);
-  letter-spacing: 1px;
-  border-radius: 8px
-}
-
-@media (max-width: 720px) {
-  header nav a {
-      padding:.5rem
-  }
-} */
 
 .sectionWelcomeWrapper {
   height: 100vh;

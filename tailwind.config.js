@@ -7,15 +7,6 @@ module.exports = {
         colors: {
           colorBorder: "var(--colorBorder)",
           colorBrown: "var(--colorBrown)",
-          colorBrownActive: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--colorBrown), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--colorBrown), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--colorBrown))`
-          },
           colorLightBrown: "var(--colorLightBrown)",
           colorLigherBrown: "var(--colorLigherBrown)",
           colorSuperLigherBrown: "var(--colorSuperLigherBrown)",
