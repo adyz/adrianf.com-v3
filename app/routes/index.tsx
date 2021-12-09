@@ -34,12 +34,12 @@ export default function Index() {
         py-0
       ">
         <div>
-          <div>
-            <h1 className="text-6xl m-0 font-serif font-bold">Hey there!</h1>
-            <h2 className="text-3xl m-0 font-serif">I’m Adrian, nice to meet you!</h2>
+          <div className="mt-28 md:mt-0">
+            <h1 className="text-xl md:text-6xl m-0 font-serif font-bold">Hey there!</h1>
+            <h2 className="text-base md:text-3xl m-0 font-serif">I’m Adrian, nice to meet you!</h2>
           </div>
           <div>
-            <p className="text-xl">
+            <p className="text-base md:text-xl">
               {description}
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function Index() {
                   window.location.href = "./Resume-Adrian-Florescu.pdf";
                 }}
                 className="
-                  uppercase py-3 px-8 rounded-md font-bold text-sm border-0 tracking-widest shadow-lg
+                  uppercase py-3 px-2 md:px-8 rounded-md font-bold text-xs md:text-sm border-0 tracking-widest shadow-lg
                   cursor-pointer bg-colorGreen text-[#fff]
                 "
               >
@@ -63,7 +63,7 @@ export default function Index() {
                   navigate("/contact/")
                 }}
                 className="
-                  uppercase py-3 px-8 rounded-md font-bold text-sm border-0 tracking-widest shadow-lg 
+                  uppercase py-3 px-2 md:px-8 rounded-md font-bold text-xs md:text-sm border-0 tracking-widest shadow-lg 
                   cursor-pointer bg-colorWhite text-colorRed
                 "
               >
