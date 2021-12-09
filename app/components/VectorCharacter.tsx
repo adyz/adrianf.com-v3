@@ -1,6 +1,8 @@
-export default function VectorCharacter() {
+export default function VectorCharacter({
+    className
+}: any) {
     return (
-        <svg width="241" height="289" viewBox="0 0 241 289" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} width="241" height="289" viewBox="0 0 241 289" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M149 276.5V265.5H159V282.5H140.5L149 276.5Z" fill="#F5EFB9" stroke="#A1854D" />
             <path d="M221.426 255.535L218.055 245.064L227.574 242L232.784 258.182L223.369 266.466L221.426 255.535Z" fill="#F5EFB9" stroke="#A1854D" />
             <path d="M156 106.5L166 70.5L173 71.5L160.5 111L156 106.5Z" fill="#F5EFB9" stroke="#A1854D" />

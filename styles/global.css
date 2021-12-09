@@ -98,69 +98,6 @@ div:target {
   margin-top: -300px
 }
 
-
-.sectionWelcomeWrapper {
-  height: 100vh;
-  min-height: 500px;
-  width: 100%;
-  overflow: hidden;
-  border-bottom: 1px solid var(--colorBorder);
-  position: relative
-}
-
-.sectionWelcomeWrapper svg {
-  position: absolute;
-  right: -30%;
-  top: 10%;
-  width: 80%;
-  height: 80%;
-  z-index: 1
-}
-
-.sectionWelcomeText {
-  color: var(--colorBrown);
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  max-width: 1000px;
-  padding: 0 2.5rem;
-  position: relative;
-  z-index: 2
-}
-
-@media (max-width: 720px) {
-  .sectionWelcomeText {
-      padding:0 1.5rem
-  }
-}
-
-.sectionWelcomeText__introHeader {
-  position: relative;
-  width: 100%
-}
-
-.sectionWelcomeText__introHeader h1,.sectionWelcomeText__introHeader h2 {
-  font-weight: 400;
-  margin: 0;
-  font-family: Georgia,Times New Roman,Times,serif
-}
-
-.sectionWelcomeText__introHeader h1 {
-  font-size: calc(2rem + 1.7vw)
-}
-
-.sectionWelcomeText__introHeader h2 {
-  font-size: calc(1rem + 1vw)
-}
-
-.sectionWelcomeText__introDescription p {
-  font-size: calc(.7rem + .5vw);
-  line-height: 1.5;
-  color: var(--colorLightBrown)
-}
-
 .sectionTechStackWrapper {
   border-bottom: 1px solid var(--colorBorder);
   width: 100%
