@@ -163,7 +163,7 @@ const Header = () => {
         style={linkStyle}
         prefetch="intent"
         className={`
-              text-xs md:text-lg lg:text-xl
+              text-xs md:text-xl lg:text-2xl xl:text-3xl
               text-colorBrown
               tracking-wide 
               no-underline 
@@ -230,7 +230,7 @@ const Header = () => {
         fixed z-20 bg-colorBg
         flex items-center shadow-sm
         w-full
-        h-72px
+        h-62px
         justify-between
         py-2
         px-2 md:px-8
@@ -241,8 +241,11 @@ const Header = () => {
           style={linkStyle}
           prefetch="intent"
           className={`
-              h-14 w-16 flex rounded-lg 
-              justify-center items-center p-2
+              h-12
+              w-14 md:w-20 
+              flex rounded-lg 
+              justify-center items-center 
+              p-1 md:p-3
               overflow-hidden
               hover:bg-colorBorder
               active:bg-colorSuperLigherBrown
@@ -252,7 +255,7 @@ const Header = () => {
         >
           <Logo />
         </Link>
-        <nav className="flex">
+        <nav className="flex gap-1">
           {NAV_LINKS.map((currentItem) => {
             return <LinkItem {...currentItem} />
           })}
@@ -263,7 +266,7 @@ const Header = () => {
         absolute
         z-10
         top-[-184px]
-        left-10 md:left-16
+        left-10 md:left-[4.5rem]
         flex
         justify-center
       ">

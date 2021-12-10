@@ -39,7 +39,13 @@ export default function Index() {
             <h2 className="text-xl md:text-3xl m-0 font-serif font-normal">I’m Adrian, nice to meet you!</h2>
           </div>
           <div className="py-5">
-            <p className="text-base md:text-xl">
+            <p 
+              className="
+                text-base md:text-xl 
+                text-colorLightBrown
+                leading-snug md:leading-snug
+              "
+            >
               {description}
             </p>
           </div>
@@ -51,7 +57,7 @@ export default function Index() {
                 }}
                 className="
                   py-2 md:py-3 
-                  px-3 md:px-8 
+                  px-5 md:px-8 
                   text-xs md:text-sm
                   uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
                   bg-colorGreen text-[#fff]
