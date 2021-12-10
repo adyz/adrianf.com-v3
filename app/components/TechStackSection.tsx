@@ -28,12 +28,18 @@ export default function TechStackSection() {
             return (
                 <section className="mb-8">
                     <h3
-                        className="text-xl uppercase font-bold tracking-widest"
+                        className="
+                            text-lg xl:text-xl
+                            uppercase font-bold tracking-widest
+                        "
                     >
                         {section.title}
                     </h3>
                     <p 
-                        className=" text-lg text-colorLightBrown"
+                        className="
+                            text-base xl:text-lg
+                            text-colorLightBrown
+                        "
                     >
                         {section.description}
                     </p>
