@@ -146,9 +146,9 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
             />
           </picture>
         </div>
-        <div>
-          <p className="text-base m-0"> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>
-          <p className="text-base m-0">Developed on <a href="https://www.remix.run">💿Remix</a></p>
+        <div className="text-colorLightBrown">
+          <p className="text-base m-0"> © {new Date().getFullYear()} Designed &amp; Coded by Adrian Florescu</p>
+          <p className="text-base m-0">Developed on <a target="_blank" href="https://www.remix.run">💿Remix</a></p>
           <p className="text-xs m-0" ><small>Latest update: 24 Nov 2021</small></p>
         </div>
       </footer>

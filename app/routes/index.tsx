@@ -22,7 +22,12 @@ export default function Index() {
   let navigate = useNavigate();
 
   return (
-    <div id="Home" className="h-[100vh] min-h-[500px] w-full overflow-hidden border-b border-solid flex border-colorBorder relative">
+    <div 
+      id="Home" 
+      className="
+        h-[100vh] min-h-[640px] w-full overflow-hidden border-b border-solid flex border-colorBorder relative
+      "
+    >
       <VectorCharacter className="absolute right-[-30%] top-[10%] w-[80%] h-[80%] z-[1]" />
       <div className="
         text-colorBrown
@@ -39,6 +44,8 @@ export default function Index() {
               className="
                 text-4xl sm:text-5xl lg:text-7xl 2xl:text-8xl
                 m-0 mb-1 font-serif font-normal
+                relative
+                z-[-1]
               "
             >
               Hey there!

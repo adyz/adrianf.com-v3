@@ -227,7 +227,7 @@ const Header = () => {
       )}
 
       <header className={`
-        fixed z-20 bg-colorBg
+        fixed z-30 bg-colorBg
         flex items-center shadow-sm
         w-full
         h-62px
@@ -264,7 +264,7 @@ const Header = () => {
 
       <div className="
         absolute
-        z-10
+        z-20
         top-[-210px] sm:top-[-200px] md:top-[-190px]
         left-8 md:left-[4.5rem]
         flex
