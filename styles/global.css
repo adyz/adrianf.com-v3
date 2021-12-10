@@ -66,67 +66,7 @@ div:target {
   fill: var(--colorLogoWing)
 }
 
-/* 
-.sectionTechStackWrapper {
-  border-bottom: 1px solid var(--colorBorder);
-  width: 100%
-}
-
-.sectionTechStack {
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
-  padding: clamp(2.5rem,5vw,5rem)
-}
-
-@media (max-width: 720px) {
-  .sectionTechStack {
-      padding:1.5rem
-  }
-}
-
-.sectionTechStack h2 {
-  font-size: calc(1.4rem + .5vw);
-  font-weight: 400;
-  position: relative;
-  font-family: Georgia,Times New Roman,Times,serif
-}
-
-.sectionTechStack h2:before {
-  content: "";
-  display: block;
-  width: 55px;
-  max-width: 50%;
-  height: 3px;
-  background: var(--colorBrown);
-  position: absolute;
-  bottom: -.6rem
-}
-
-.sectionTechStack section {
-  padding: 1.2rem 0
-}
-
-.sectionTechStack section:last-of-type {
-  padding-bottom: 0
-}
-
-.sectionTechStack section h3 {
-  font-size: calc(.87rem + .3vw);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0 0 .4rem
-}
-
-.sectionTechStack section p {
-  margin: 0;
-  padding: 0;
-  font-size: calc(.87rem + .3vw);
-  line-height: 1.5;
-  color: var(--colorLightBrown)
-} */
-
-.sectionExperienceWrapper {
+/* .sectionExperienceWrapper {
   border-bottom: 1px solid var(--colorBorder);
   width: 100%
 }
@@ -398,7 +338,7 @@ div:target {
   cursor: pointer;
   outline: none;
   font-size: calc(.6rem + .3vw)
-}
+} */
 
 .sectionContactWrapper {
   border-bottom: 1px solid var(--colorBorder);

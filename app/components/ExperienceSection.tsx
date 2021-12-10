@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from "remix";
 
-export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false, isCollapsable = true }: any) {
-  const [isExpanded, setIsExpanded] = React.useState(false);
+export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false}: any) {
 
 
   const baseLogo = `/images/logos/${item.companyLogo}.jpg`;
@@ -11,42 +10,39 @@ export default function ExperienceSection({ first = false, last = false, home = 
   return (
     <section
       className={`
+        flex flex-col relative mb-10
           ${home ? 'home ' : ''} 
           ${isVisible ? 'isVisible' : ''}
           ${first ? 'isFirst' : ''}
           ${last ? 'isLast' : ''}
           `}
     >
-      <div className="companyLogo">
-        <div className="image-wrapper">
-          <img width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
-        </div>
-      </div>
-      <div className="title">
+      <div>
+      <img className="rounded-lg w-24 shadow-md float-right" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
         {full ? (
-            <p className="heading">{item.title}</p>
+            <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
         ) : (
-            <Link className="heading" to={`./${item.companyLogo}`}>{item.title}</Link>
+            <Link   className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest" to={`./${item.companyLogo}`}>{item.title}</Link>
         )}
         
-        <p className="company">{item.company}</p>
-        <p className="time">
+        <p className="text-colorLigherBrown text-sm">{item.company}</p>
+        <p className="text-colorLigherBrown text-sm">
           {item.period.start} -{" "}
           {item.period.end}
         </p>
-        <p className="location">{item.location}</p>
+        <p className="text-colorLigherBrown text-sm">{item.location}</p>
       </div>
-      <div className="intro">
+      <div className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
         <p>
           {item.intro}
         </p>
       </div>
 
-      <div className={`expandable ${isExpanded || full ? 'is-expanded' : 'is-collapsed'}`}>
+      {full && <div className="mt-10">
         {item.milestones && (
-          <div className="milestones">
-            <p className="sec-heading">Milestones: </p>
-            <ul>
+          <div className="">
+            <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Milestones: </p>
+            <ul className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
               {item.milestones.map((mile: any, mileI: any) => {
                 return (
                   <li key={`mile-${mileI}`}>
@@ -65,21 +61,18 @@ export default function ExperienceSection({ first = false, last = false, home = 
         )}
 
         {item.technologies.length > 0 && (
-          <div className="technologies">
-            <p className="sec-heading">Used: </p>
-            <ul>
+          <div className="mt-10">
+            <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Used: </p>
+            <ul className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
               {item.technologies.map((tech: any, techI: any) => {
-                return <li key={`tech-${techI}`}>{tech}</li>
+                return <li className="inline" key={`tech-${techI}`}>{tech}{techI === item.technologies.length -1 ? '' : ','} </li>
               })}
             </ul>
           </div>
         )}
-
-
       </div>
-
-      {!full && isCollapsable && <button className="expandButton" onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? 'Collapse back' : 'Read more'}</button>}
-      {!full && !isCollapsable && <Link className="expandButton" to={`${item.companyLogo}`} title={`Exp @ ${item.company}`}>Read more</Link>}
+      }
+      {!full && <Link className="text-colorBrown text-base uppercase font-bold tracking-widest mt-2" to={`./${item.companyLogo}`}>Read more</Link>}
     </section>
   )
 }
