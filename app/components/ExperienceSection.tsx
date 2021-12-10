@@ -17,7 +17,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
           `}
     >
       <div>
-        <img className="rounded-lg w-20 shadow-md float-right relative z-10" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
+        <img className="rounded-lg w-20 shadow-md float-right relative z-20" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
         {full ? (
           <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
         ) : (
@@ -39,11 +39,27 @@ export default function ExperienceSection({ first = false, last = false, home = 
 
       {!full && (
         <>
-          <div className="h-full w-0.5 bg-colorSuperLigherBrown absolute top-10 right-10"></div>
-          <div className={`
-            h-2.5 w-2.5 rounded-full bg-colorSuperLigherBrown absolute -bottom-5 right-9 transition-colors ease-in-out delay-1000
-            ${isVisible ? 'bg-colorRed' : 'bg-colorSuperLigherBrown'}
-          `}></div>
+
+
+            {isVisible && 
+              <div 
+                className={`h-10 w-0.5 absolute z-10 top-0 right-10 bg-gradient-to-b from-colorSuperLigherBrown to-colorRed animate-dropFade`}
+              />
+            }
+
+            <div className="h-full w-0.5 bg-colorSuperLigherBrown absolute top-10 right-10"/>
+
+            <div 
+              className={`h-2.5 w-2.5 rounded-full absolute -bottom-5 right-9 bg-colorSuperLigherBrown`}
+            />
+   
+            {isVisible && 
+              <div 
+                className={`h-2.5 w-2.5 rounded-full absolute -bottom-5 right-9 bg-colorRed opacity-0 animate-fadeInOut`}
+              />
+            }
+
+
         </>
       )}
 
