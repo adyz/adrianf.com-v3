@@ -43,9 +43,8 @@ export default function Index() {
             <h1 
               className="
                 text-4xl sm:text-5xl lg:text-7xl 2xl:text-8xl
-                m-0 mb-1 font-serif font-normal
+                m-0 mb-2 font-serif font-normal
                 relative
-                z-[-1]
               "
             >
               Hey there!
@@ -81,7 +80,7 @@ export default function Index() {
                   className="
                     py-2 md:py-3 
                     px-5 md:px-8 
-                    text-[10px] md:text-sm
+                    text-[10px] sm:text-xs lg:text-base
                     uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
                     bg-colorGreen text-[#fff]
                   "
@@ -99,7 +98,7 @@ export default function Index() {
                 className="
                   py-2 md:py-3 
                   px-3 md:px-8 
-                  text-[10px] md:text-sm
+                  text-[10px] sm:text-xs lg:text-base
                   uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
                   bg-colorWhite text-colorRed
                 "

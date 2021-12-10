@@ -20,6 +20,7 @@ module.exports = {
         },
         fontFamily: {
           'serif': ['Georgia','Times New Roman','Times','serif'],
+          'body': ['Roboto','Arial','Helvetica','sans-serif']
         }
       },
     },

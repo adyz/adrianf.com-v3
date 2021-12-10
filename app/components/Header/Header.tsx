@@ -163,12 +163,12 @@ const Header = () => {
         style={linkStyle}
         prefetch="intent"
         className={`
-              text-xs sm:text-lg md:text-xl 2xl:text-2xl
+              text-xs sm:text-base lg:text-lg 2xl:text-2xl
               text-colorBrown
-              tracking-wide 
+              tracking-wider
               no-underline 
               py-2 
-              px-1.5 md:px-3 lg:px-6
+              px-1.5 sm:px-2 lg:px-6
               rounded-md
               border border-transparent border-solid
               text-center
@@ -249,6 +249,7 @@ const Header = () => {
               overflow-hidden
               hover:bg-colorBorder
               active:bg-colorSuperLigherBrown
+
               ${pathName === '' && 'bg-colorBorder'}`
           }
           title={'Home Link'} to="/"
