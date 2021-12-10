@@ -38,9 +38,7 @@ export default function Page() {
         >
 
             <PageHeader description={description}>
-                <h1>Thoughts <span role="img" aria-label="emoji">
-                    🤯
-                </span></h1>
+                Thoughts <span role="img" aria-label="emoji">🤯</span>
             </PageHeader>
             <div className="sectionArticles">
 

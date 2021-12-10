@@ -48,7 +48,7 @@ export default function ExperiencePage() {
                 "
             >
                 <PageHeader>
-                    <h1>Experience @ {data.company}</h1>
+                    Experience @ {data.company}
                 </PageHeader>
                 <div className="sectionExperience">
                     <ExperienceSection full={true} item={data} />  

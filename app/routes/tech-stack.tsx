@@ -30,11 +30,7 @@ export default function Page() {
             "
         >
             <PageHeader description={description}>
-
-                <h1>Tech stack  <span role="img" aria-label="emoji">
-                    👨‍💻
-                </span></h1>
-
+                Tech stack  <span role="img" aria-label="emoji">👨‍💻</span>
             </PageHeader>
             <div className="sectionTechStack">
                 <TechStackSection />

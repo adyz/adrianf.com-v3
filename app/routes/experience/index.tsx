@@ -42,9 +42,7 @@ export default function Page() {
             }}
         >
             <PageHeader description={description}>
-                <h1>Experience <span role="img" aria-label="emoji">
-                    🧓🏼
-                </span></h1>
+                Experience <span role="img" aria-label="emoji">🧓🏼</span>
             </PageHeader>
             <div className="sectionExperience">
 
