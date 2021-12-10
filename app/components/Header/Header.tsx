@@ -268,19 +268,23 @@ const Header = () => {
         justify-center
       ">
         <animated.div
-          className="
-          absolute
-          w-10
-          pb-5
-          flex
-          items-center
-          justify-center
-        " {...bind()} style={{ 
-          willChange: 'transform',
-          cursor: 'grab',
-          touchAction: 'none',
-          transform: y.to((y) => `translate3d(0px,${y}px,0)`) 
-          }}>
+            className="
+              absolute
+              -top-12
+              w-10
+              pb-5
+              flex
+              items-center
+              justify-center
+            " 
+            {...bind()} 
+            style={{ 
+              willChange: 'transform',
+              cursor: 'grab',
+              touchAction: 'none',
+              transform: y.to((y) => `translate3d(0px,${y}px,0)`) 
+            }}
+          >
           <Switch />
         </animated.div>
 

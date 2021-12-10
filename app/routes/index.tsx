@@ -38,7 +38,7 @@ export default function Index() {
             <h1 className="text-4xl md:text-6xl text m-0 font-serif font-normal">Hey there!</h1>
             <h2 className="text-xl md:text-3xl m-0 font-serif font-normal">I’m Adrian, nice to meet you!</h2>
           </div>
-          <div>
+          <div className="py-5">
             <p className="text-base md:text-xl">
               {description}
             </p>
