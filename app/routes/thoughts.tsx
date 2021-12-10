@@ -34,7 +34,11 @@ export default function Page() {
                 flex-col
                 justify-center
                 flex-wrap
-            "
+        "
+        style={{
+            backgroundPosition: '0 40px',
+            backgroundSize: '100% 40vh'
+        }}
         >
 
             <PageHeader description={description}>

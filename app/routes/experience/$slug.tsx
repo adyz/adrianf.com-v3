@@ -37,7 +37,7 @@ export default function ExperiencePage() {
     return (
         <>
             <div
-            className="
+                className="
                     min-h-screen
                     border-b border-solid border-colorBorder
                     bg-gradient-to-b from-colorSuperLigherBrown to-colorBg bg-no-repeat
@@ -46,6 +46,10 @@ export default function ExperiencePage() {
                     justify-center
                     flex-wrap
                 "
+                style={{
+                    backgroundPosition: '0 40px',
+                    backgroundSize: '100% 40vh'
+                }}
             >
                 <PageHeader>
                     Experience @ {data.company}

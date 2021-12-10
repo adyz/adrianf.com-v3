@@ -27,12 +27,24 @@ export default function Page() {
                 flex-col
                 justify-center
                 flex-wrap
-            "
+        "
+        style={{
+            backgroundPosition: '0 40px',
+            backgroundSize: '100% 40vh'
+        }}
         >
             <PageHeader description={description}>
                 Tech stack  <span role="img" aria-label="emoji">👨‍💻</span>
             </PageHeader>
-            <div className="sectionTechStack">
+            <div 
+                className="
+                    w-full max-w-4xl
+                    min-h-[255px]
+                    px-5
+                    mt-20
+                    mx-auto
+                "
+            >
                 <TechStackSection />
             </div>
         </div>

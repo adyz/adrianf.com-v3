@@ -59,7 +59,7 @@ export default function PageHeader({ description, children }: {
                 <p
                   className="
                     text-lg md:text-2xl lg:text-3xl
-                    leading-tight
+                    leading-snug
                     mt-5
                   "
                 >

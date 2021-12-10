@@ -1,36 +1,45 @@
+const sections = [
+    {
+        title: "Coding",
+        description: 'React with Typescript, CSS (SASS, BEM, Tailwind), and HTML'
+    },
+    {
+        title: "Build / DevOps",
+        description: 'Webpack, NPM, Travis, Git, Docker'
+    },
+    {
+        title: "Server side",
+        description: 'Node.js (Express.js, Remix)'
+    },
+    {
+        title: "Design",
+        description: `Familiar with Photoshop, Sketch, Figma, etc and I also like to design web apps or features in existing apps that I work on from time to time`
+    },
+    {
+        title: "Used in the past",
+        description: `Backbone.js, Angular.js, Vue.js, jQuery, PHP, MySQL, Grunt, Gulp, Cordova`
+    },
+]
+
 export default function TechStackSection() {
     return (
         <>
-            <section>
-                <h3>Coding</h3>
-                <p>React with Typescript, SASS, and HTML</p>
-            </section>
-
-            <section>
-                <h3>Build / DevOps</h3>
-                <p>Webpack, NPM, Travis, Git, Docker</p>
-            </section>
-
-            <section>
-                <h3>Server side</h3>
-                <p>Node.js usually with Express.js</p>
-            </section>
-
-            <section>
-                <h3>Design</h3>
-                <p>
-                    Familiar with Photoshop, Sketch, Figma, etc and I also like to
-                    design web apps or features in existing apps that I work on from
-                    time to time
-  </p>
-            </section>
-
-            <section>
-                <h3>Used in the past</h3>
-                <p>
-                    Backbone.js, Angular.js, Vue.js, jQuery, PHP, MySQL, Grunt, Gulp,
-                    Cordova
-  </p>
-            </section></>
+        {sections.map((section) => {
+            return (
+                <section className="mb-8">
+                    <h3
+                        className="text-xl uppercase font-bold tracking-widest"
+                    >
+                        {section.title}
+                    </h3>
+                    <p 
+                        className=" text-lg text-colorLightBrown"
+                    >
+                        {section.description}
+                    </p>
+                </section>
+            )
+        })}
+        </>
     )
 }
