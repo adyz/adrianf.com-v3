@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from "remix";
 
-export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false}: any) {
+export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false }: any) {
 
 
   const baseLogo = `/images/logos/${item.companyLogo}.jpg`;
@@ -18,29 +17,39 @@ export default function ExperienceSection({ first = false, last = false, home = 
           `}
     >
       <div>
-      <img className="rounded-lg w-24 shadow-md float-right" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
+        <img className="rounded-lg w-20 shadow-md float-right relative z-10" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
         {full ? (
-            <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
+          <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
         ) : (
-            <Link   className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest" to={`./${item.companyLogo}`}>{item.title}</Link>
+          <Link className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest block pt-5" to={`./${item.companyLogo}`}>{item.title}</Link>
         )}
-        
-        <p className="text-colorLigherBrown text-sm">{item.company}</p>
+
+        <p className="text-colorLigherBrown text-sm mt-5">{item.company}</p>
         <p className="text-colorLigherBrown text-sm">
           {item.period.start} -{" "}
           {item.period.end}
         </p>
         <p className="text-colorLigherBrown text-sm">{item.location}</p>
       </div>
-      <div className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
+      <div className="text-colorLightBrown text-base md:text-lg mt-5 w-10/12">
         <p>
           {item.intro}
         </p>
       </div>
 
+      {!full && (
+        <>
+          <div className="h-full w-0.5 bg-colorSuperLigherBrown absolute top-10 right-10"></div>
+          <div className={`
+            h-2.5 w-2.5 rounded-full bg-colorSuperLigherBrown absolute -bottom-5 right-9 transition-colors ease-in-out delay-1000
+            ${isVisible ? 'bg-colorRed' : 'bg-colorSuperLigherBrown'}
+          `}></div>
+        </>
+      )}
+
       {full && <div className="mt-10">
         {item.milestones && (
-          <div className="">
+          <div>
             <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Milestones: </p>
             <ul className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
               {item.milestones.map((mile: any, mileI: any) => {
@@ -55,7 +64,8 @@ export default function ExperienceSection({ first = false, last = false, home = 
                       })}
                     </ul>
                   </li>
-                )})}
+                )
+              })}
             </ul>
           </div>
         )}
@@ -65,14 +75,14 @@ export default function ExperienceSection({ first = false, last = false, home = 
             <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Used: </p>
             <ul className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
               {item.technologies.map((tech: any, techI: any) => {
-                return <li className="inline" key={`tech-${techI}`}>{tech}{techI === item.technologies.length -1 ? '' : ','} </li>
+                return <li className="inline" key={`tech-${techI}`}>{tech}{techI === item.technologies.length - 1 ? '' : ','} </li>
               })}
             </ul>
           </div>
         )}
       </div>
       }
-      {!full && <Link className="text-colorBrown text-base uppercase font-bold tracking-widest mt-2" to={`./${item.companyLogo}`}>Read more</Link>}
+      {!full && <Link className="text-colorBrown text-sm uppercase font-bold tracking-widest mt-2" to={`./${item.companyLogo}`}>Read more</Link>}
     </section>
   )
 }
