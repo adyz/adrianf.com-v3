@@ -25,7 +25,17 @@ export default function Page() {
     const description = `I write from time to time. Read my thoughts to know me better`;
     
     return (
-        <div className="page-wrapper">
+        <div
+        className="
+                min-h-screen
+                border-b border-solid border-colorBorder
+                bg-gradient-to-b from-colorSuperLigherBrown to-colorBg bg-no-repeat
+                flex
+                flex-col
+                justify-center
+                flex-wrap
+            "
+        >
 
             <PageHeader description={description}>
                 <h1>Thoughts <span role="img" aria-label="emoji">

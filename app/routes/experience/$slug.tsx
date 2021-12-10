@@ -36,7 +36,17 @@ export default function ExperiencePage() {
     const data = useLoaderData()
     return (
         <>
-            <div className="page-wrapper">
+            <div
+            className="
+                    min-h-screen
+                    border-b border-solid border-colorBorder
+                    bg-gradient-to-b from-colorSuperLigherBrown to-colorBg bg-no-repeat
+                    flex
+                    flex-col
+                    justify-center
+                    flex-wrap
+                "
+            >
                 <PageHeader>
                     <h1>Experience @ {data.company}</h1>
                 </PageHeader>

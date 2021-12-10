@@ -26,7 +26,21 @@ export default function Page() {
     const description = `Working with startups and big companies like IBM in my more than 10 years front-end development career`;
     return (
 
-        <div className="page-wrapper">
+        <div 
+            className="
+                min-h-screen
+                border-b border-solid border-colorBorder
+                bg-gradient-to-b from-colorSuperLigherBrown to-colorBg bg-no-repeat
+                flex
+                flex-col
+                justify-center
+                flex-wrap
+            "
+            style={{
+                backgroundPosition: '0 40px',
+                backgroundSize: '100% 40vh'
+            }}
+        >
             <PageHeader description={description}>
                 <h1>Experience <span role="img" aria-label="emoji">
                     🧓🏼
