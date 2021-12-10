@@ -35,8 +35,8 @@ export default function Index() {
       ">
         <div className="z-10">
           <div className="mt-28 md:mt-0">
-            <h1 className="text-4xl md:text-6xl text m-0 font-serif font-normal">Hey there!</h1>
-            <h2 className="text-xl md:text-3xl m-0 font-serif font-normal">I’m Adrian, nice to meet you!</h2>
+            <h1 className="text-4xl md:text-6xl 2xl:text-7xl text m-0 mb-1 font-serif font-normal">Hey there!</h1>
+            <h2 className="text-xl md:text-2xl 2xl:text-4xl m-0 font-serif font-normal">I’m Adrian, nice to meet you!</h2>
           </div>
           <div className="py-5">
             <p 

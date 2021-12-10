@@ -163,7 +163,7 @@ const Header = () => {
         style={linkStyle}
         prefetch="intent"
         className={`
-              text-xs md:text-xl lg:text-2xl xl:text-3xl
+              text-xs sm:text-lg md:text-xl lg:text-2xl
               text-colorBrown
               tracking-wide 
               no-underline 
@@ -232,7 +232,7 @@ const Header = () => {
         w-full
         h-62px
         justify-between
-        py-2
+        py-1 md:py-2
         px-2 md:px-8
         
         ${isSticky ? ' shadow-md' : 'shadow-sm'}
@@ -241,11 +241,11 @@ const Header = () => {
           style={linkStyle}
           prefetch="intent"
           className={`
-              h-12
-              w-14 md:w-20 
+              h-10 md:h-12
+              w-12 md:w-20 
               flex rounded-lg 
               justify-center items-center 
-              p-1 md:p-3
+              p-0.5 md:p-3
               overflow-hidden
               hover:bg-colorBorder
               active:bg-colorSuperLigherBrown
@@ -265,8 +265,8 @@ const Header = () => {
       <div className="
         absolute
         z-10
-        top-[-184px]
-        left-10 md:left-[4.5rem]
+        top-[-210px] sm:top-[-200px] md:top-[-190px]
+        left-8 md:left-[4.5rem]
         flex
         justify-center
       ">
