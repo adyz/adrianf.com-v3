@@ -23,20 +23,20 @@ export default function Index() {
 
   return (
     <div id="Home" className="h-[100vh] min-h-[500px] w-full overflow-hidden border-b border-solid flex border-colorBorder relative">
-      <VectorCharacter className="absolute right-[-30%] top-[10%] w-[80%] h-[80%] z-10" />
+      <VectorCharacter className="absolute right-[-30%] top-[10%] w-[80%] h-[80%] z-[1]" />
       <div className="
         text-colorBrown
         flex w-full h-full
         items-center
         justify-center
         max-w-[1000px]
-        px-8
+        px-2 md:px-8
         py-0
       ">
-        <div>
+        <div className="z-10">
           <div className="mt-28 md:mt-0">
-            <h1 className="text-xl md:text-6xl m-0 font-serif font-bold">Hey there!</h1>
-            <h2 className="text-base md:text-3xl m-0 font-serif">I’m Adrian, nice to meet you!</h2>
+            <h1 className="text-4xl md:text-6xl text m-0 font-serif font-normal">Hey there!</h1>
+            <h2 className="text-xl md:text-3xl m-0 font-serif font-normal">I’m Adrian, nice to meet you!</h2>
           </div>
           <div>
             <p className="text-base md:text-xl">
@@ -50,8 +50,11 @@ export default function Index() {
                   window.location.href = "./Resume-Adrian-Florescu.pdf";
                 }}
                 className="
-                  uppercase py-3 px-2 md:px-8 rounded-md font-bold text-xs md:text-sm border-0 tracking-widest shadow-lg
-                  cursor-pointer bg-colorGreen text-[#fff]
+                  py-2 md:py-3 
+                  px-3 md:px-8 
+                  text-xs md:text-sm
+                  uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
+                  bg-colorGreen text-[#fff]
                 "
               >
                 Download Resume
@@ -63,8 +66,11 @@ export default function Index() {
                   navigate("/contact/")
                 }}
                 className="
-                  uppercase py-3 px-2 md:px-8 rounded-md font-bold text-xs md:text-sm border-0 tracking-widest shadow-lg 
-                  cursor-pointer bg-colorWhite text-colorRed
+                  py-2 md:py-3 
+                  px-3 md:px-8 
+                  text-xs md:text-sm
+                  uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
+                  bg-colorWhite text-colorRed
                 "
               >
                 Contact me

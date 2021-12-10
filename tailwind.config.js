@@ -18,6 +18,9 @@ module.exports = {
           colorLogoLeg: "var(--colorLogoLeg)",
           colorLogoWing: "var(--colorLogoWing)",
         },
+        fontFamily: {
+          'serif': ['Georgia','Times New Roman','Times','serif'],
+        }
       },
     },
     variants: {

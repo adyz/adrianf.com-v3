@@ -227,16 +227,13 @@ const Header = () => {
       )}
 
       <header className={`
-        fixed z-10 bg-colorBg
+        fixed z-20 bg-colorBg
         flex items-center shadow-sm
         w-full
-        h-[60px]
-        sm:h-[72px]
+        h-72px
         justify-between
-        
         py-2
-        px-3
-        md:px-8
+        px-2 md:px-8
         
         ${isSticky ? ' shadow-md' : 'shadow-sm'}
       `}>
@@ -244,7 +241,7 @@ const Header = () => {
           style={linkStyle}
           prefetch="intent"
           className={`
-              h-full w-16 md:w-20 flex rounded-lg 
+              h-14 w-16 flex rounded-lg 
               justify-center items-center p-2
               overflow-hidden
               hover:bg-colorBorder
@@ -262,13 +259,35 @@ const Header = () => {
         </nav>
       </header>
 
-      <div className="switch left-2.5 top-14 md:top-16 md:left-9">
-        <div className="switch__base">
-          <SwitchBase />
-        </div>
-        <animated.div className="switch__chain" {...bind()} style={{ transform: y.to((y) => `translate3d(0px,${y}px,0)`) }}>
+      <div className="
+        absolute
+        z-10
+        top-[-184px]
+        left-10 md:left-16
+        flex
+        justify-center
+      ">
+        <animated.div
+          className="
+          absolute
+          w-10
+          pb-5
+          flex
+          items-center
+          justify-center
+        " {...bind()} style={{ 
+          willChange: 'transform',
+          cursor: 'grab',
+          touchAction: 'none',
+          transform: y.to((y) => `translate3d(0px,${y}px,0)`) 
+          }}>
           <Switch />
         </animated.div>
+
+        <div className="absolute">
+          <SwitchBase />
+        </div>
+
       </div>
 
     </>

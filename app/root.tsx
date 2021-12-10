@@ -125,19 +125,31 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
     <>
       <Header />
       <main>{children}</main>
-      <footer>
-
-        <div className="profile">
-          <picture>
+      <footer className="text-center pb-4">
+        <div className="flex items-center justify-center relative pt-10 pb-5">
+          <picture
+            className="
+              rounded-full 
+              overflow-hidden
+              w-20
+              h-20
+              hover:scale-150
+            " 
+          >
             <source width="100%" height="100%" media="(max-width: 799px)" srcSet={resizedProfileImageMobile} />
             <source width="100%" height="100%" media="(min-width: 800px)" srcSet={resizedProfileImage} />
-            <img width="100%" height="100%" src={resizedProfileImage} alt="Adrian Florescu" />
+            <img 
+              width="100%" 
+              height="100%" 
+              src={resizedProfileImage} 
+              alt="Adrian Florescu" 
+            />
           </picture>
         </div>
-        <div className="copy">
-          <p> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>
-          <p>Developed on <a href="https://www.remix.run">💿Remix</a></p>
-          <p><small style={{ fontSize: '7px' }}>Latest update: 24 Nov 2021</small></p>
+        <div>
+          <p className="text-base m-0"> © {new Date().getFullYear()} Designed & coded by Adrian Florescu</p>
+          <p className="text-base m-0">Developed on <a href="https://www.remix.run">💿Remix</a></p>
+          <p className="text-xs m-0" ><small>Latest update: 24 Nov 2021</small></p>
         </div>
       </footer>
     </>
