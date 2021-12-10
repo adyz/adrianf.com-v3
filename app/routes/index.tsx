@@ -30,20 +30,35 @@ export default function Index() {
         items-center
         justify-center
         max-w-[1000px]
-        px-2 md:px-8
+        px-4 md:px-8
         py-0
       ">
         <div className="z-10">
           <div className="mt-28 md:mt-0">
-            <h1 className="text-4xl md:text-6xl 2xl:text-7xl text m-0 mb-1 font-serif font-normal">Hey there!</h1>
-            <h2 className="text-xl md:text-2xl 2xl:text-4xl m-0 font-serif font-normal">I’m Adrian, nice to meet you!</h2>
+            <h1 
+              className="
+                text-4xl sm:text-5xl lg:text-7xl 2xl:text-8xl
+                m-0 mb-1 font-serif font-normal
+              "
+            >
+              Hey there!
+            </h1>
+            <h2 
+              className="
+                text-xl sm:text-2xl lg:text-4xl 2xl:text-5xl
+                m-0 font-serif font-normal
+              "
+            >
+              I’m Adrian, nice to meet you!
+            </h2>
           </div>
-          <div className="py-5">
+          <div className="py-8">
             <p 
               className="
-                text-base md:text-xl 
+                text-lg md:text-2xl 
                 text-colorLightBrown
-                leading-snug md:leading-snug
+                leading-normal
+                max-w-[95%]
               "
             >
               {description}
@@ -51,20 +66,23 @@ export default function Index() {
           </div>
           <div className="flex flex-1 gap-3">
             <Boop y={2}>
-              <button
-                onClick={() => {
-                  window.location.href = "./Resume-Adrian-Florescu.pdf";
-                }}
-                className="
-                  py-2 md:py-3 
-                  px-5 md:px-8 
-                  text-xs md:text-sm
-                  uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
-                  bg-colorGreen text-[#fff]
-                "
-              >
-                Download Resume
-              </button>
+              <div className="flex flex-col items-center">
+                <button
+                  onClick={() => {
+                    window.location.href = "./Resume-Adrian-Florescu.pdf";
+                  }}
+                  className="
+                    py-2 md:py-3 
+                    px-5 md:px-8 
+                    text-[10px] md:text-sm
+                    uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
+                    bg-colorGreen text-[#fff]
+                  "
+                >
+                  Download Resume
+                </button>
+                <p className="w-40 text-center text-[11px] md:text-sm mt-2">Or click on the links in the top right corner 🚀</p>
+              </div>
             </Boop>
             <Boop y={2}>
               <button
@@ -74,7 +92,7 @@ export default function Index() {
                 className="
                   py-2 md:py-3 
                   px-3 md:px-8 
-                  text-xs md:text-sm
+                  text-[10px] md:text-sm
                   uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
                   bg-colorWhite text-colorRed
                 "

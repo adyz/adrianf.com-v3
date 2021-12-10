@@ -163,7 +163,7 @@ const Header = () => {
         style={linkStyle}
         prefetch="intent"
         className={`
-              text-xs sm:text-lg md:text-xl lg:text-2xl
+              text-xs sm:text-lg md:text-xl 2xl:text-2xl
               text-colorBrown
               tracking-wide 
               no-underline 
