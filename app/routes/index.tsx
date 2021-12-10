@@ -61,7 +61,7 @@ export default function Index() {
           <div className="py-8">
             <p 
               className="
-                text-lg md:text-2xl 
+                text-base sm:text-lg md:text-xl lg:text-2xl 
                 text-colorLightBrown
                 leading-normal
                 max-w-[95%]
@@ -80,7 +80,7 @@ export default function Index() {
                   className="
                     py-2 md:py-3 
                     px-5 md:px-8 
-                    text-[10px] sm:text-xs lg:text-base
+                    text-xs lg:text-base
                     uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
                     bg-colorGreen text-[#fff]
                   "
