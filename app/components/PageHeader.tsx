@@ -82,6 +82,7 @@ export default function PageHeader({ description, children }: {
                       aspect-[4/6]
                       md:aspect-[5/6]
                     "
+                    loading="lazy"
                     width="100%" 
                     height="100%" 
                     src={resizedImage} 

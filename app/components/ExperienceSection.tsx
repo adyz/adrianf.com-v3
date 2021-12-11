@@ -17,7 +17,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
           `}
     >
       <div>
-        <img className="rounded-lg w-16 h-16 bg-colorWhite shadow-md float-right relative z-30" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
+        <img className="rounded-lg w-16 h-16 bg-colorWhite shadow-md float-right relative z-30" width="100%" loading="lazy" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
         {full ? (
           <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
         ) : (
