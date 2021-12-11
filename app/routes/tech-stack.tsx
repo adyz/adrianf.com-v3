@@ -26,7 +26,7 @@ export default function Page() {
                 flex
                 flex-col
                 justify-center
-                flex-wrap
+                items-center
         "
         style={{
             backgroundPosition: '0 40px',
