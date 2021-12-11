@@ -55,7 +55,7 @@ export default function Page() {
                 "
             >
 
-                <div className="grid gap-10 grid-cols-2">
+                <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
                     {data && data.length > 0 && data.map((article: any, articleIndex: any) => {
                         const articleImgRes =`https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,g_center,h_420,w_1400,q_30/${article.thumb}`
                         return (
