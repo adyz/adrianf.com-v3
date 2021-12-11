@@ -258,7 +258,7 @@ const Header = () => {
         </Link>
         <nav className="flex gap-1">
           {NAV_LINKS.map((currentItem) => {
-            return <LinkItem {...currentItem} />
+            return <LinkItem {...currentItem} key={currentItem.link} />
           })}
         </nav>
       </header>
@@ -288,7 +288,7 @@ const Header = () => {
               willChange: 'transform',
               cursor: 'grab',
               touchAction: 'none',
-              transform: y.to((y) => `translate3d(0px,${y}px,0)`) 
+              transform: y ? y.to((y) => `translate3d(0px,${y}px,0)`) : undefined 
             }}
           >
           <Switch />

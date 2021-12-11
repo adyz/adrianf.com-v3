@@ -66,7 +66,7 @@ export default function Page() {
                                 target="_blank"
                                 className="shadow-md rounded-md bg-colorWhite hover:shadow-lg"
                             >
-                                <img className="rounded-t-md" width="100%" height="100%" src={articleImgRes} loading="lazy" alt={article.title} />
+                                <img className="rounded-t-md bg-colorBorder" style={{aspectRatio: '10/3'}} width="100%" height="100%" src={articleImgRes} loading="lazy" alt={article.title} />
                                 <span className="p-5 block">
                                     <span className="float-right text-colorBrown">
                                         <ExternalLinkIcon />
