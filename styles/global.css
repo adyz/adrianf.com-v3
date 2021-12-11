@@ -66,24 +66,6 @@ div:target {
   fill: var(--colorLogoWing)
 }
 
-.secondaryPageWrapper {
-  border-bottom: 1px solid var(--colorBorder);
-  width: 100%
-}
-
-.secondaryPageWrapper .secondaryPage {
-  width: 100%;
-  max-width: 950px;
-  margin: 0 auto;
-  padding: clamp(2.5rem,5vw,5rem)
-}
-
-@media (max-width: 720px) {
-  .secondaryPageWrapper .secondaryPage {
-      padding:1.5rem
-  }
-}
-
 .notFoundWrapper {
   overflow: hidden;
   border-bottom: 1px solid var(--colorBorder)
@@ -132,8 +114,6 @@ div:target {
   100% {opacity:1;}
 }
 
-
-
 .loading span {
   position: absolute;
   width: 50%;
@@ -150,17 +130,6 @@ div:target {
           animation: move_2 2s linear infinite;
 }
 
-@-webkit-keyframes move_1 {
-  0% {
-    transform: translateX(-50%);
-  }
-  50% {
-    transform: translateX(150%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
 
 @keyframes move_1 {
   0% {
@@ -173,17 +142,7 @@ div:target {
     transform: translateX(-50%);
   }
 }
-@-webkit-keyframes move_2 {
-  0% {
-    transform: translateX(-50%);
-  }
-  50% {
-    transform: translateX(150%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
+
 @keyframes move_2 {
   0% {
     transform: translateX(-50%);
