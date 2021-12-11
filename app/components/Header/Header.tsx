@@ -136,7 +136,55 @@ const Header = () => {
     }
   }
 
-  const linkStyle = {transition: 'all .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1'}
+  const linkStyle = { transition: 'opacity .2s ease', opacity: transition.state === 'loading' ? '0.4' : '1' }
+
+
+  const NAV_LINKS = [{
+    label: 'Tech Stack',
+    link: 'tech-stack'
+  },
+  {
+    label: 'Experience',
+    link: 'experience'
+  },
+  {
+    label: 'Thoughts',
+    link: 'thoughts'
+  },
+  {
+    label: 'Contact',
+    link: 'contact'
+  }]
+
+
+  function LinkItem({ label, link }: { label: string; link: string }) {
+    return (
+      <Link
+        style={linkStyle}
+        prefetch="intent"
+        className={`
+              text-xs sm:text-base lg:text-lg 2xl:text-xl
+              text-colorBrown
+              tracking-wider
+              no-underline 
+              py-2 
+              px-1.5 sm:px-2 lg:px-6
+              rounded-md
+              border border-transparent border-solid
+              text-center
+              flex
+              items-center
+              hover:bg-colorBorder
+              active:bg-colorSuperLigherBrown
+              ${(pathName === link || pathName.startsWith(link)) && 'bg-colorBorder'}
+            `}
+        to={link}
+      >
+        {label}
+      </Link>
+    )
+  }
+
   return (
     <>
 
@@ -178,25 +226,78 @@ const Header = () => {
         </style>
       )}
 
-      <header className={`${isSticky ? 'is-sticky' : 'is-fixed'}`}>
-        <Link style={linkStyle} prefetch="intent" className={`logo ${pathName === '' && 'is-active'}`} title={'Home Link'} to="/">
+      <header className={`
+        fixed z-40 bg-colorBg
+        flex items-center shadow-sm
+        w-full
+        h-62px
+        justify-between
+        py-1 md:py-2
+        px-2 md:px-8
+        
+        ${isSticky ? ' shadow-md' : 'shadow-sm'}
+      `}>
+        <Link
+          style={linkStyle}
+          prefetch="intent"
+          className={`
+              h-10 md:h-12
+              w-12 md:w-20 
+              flex rounded-lg 
+              justify-center items-center 
+              p-0.5 md:p-3
+              overflow-hidden
+              hover:bg-colorBorder
+              active:bg-colorSuperLigherBrown
+
+              ${pathName === '' && 'bg-colorBorder'}`
+          }
+          title={'Home Link'} to="/"
+        >
           <Logo />
         </Link>
-        <nav>
-          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'tech-stack' && 'is-active'}`} to={`/tech-stack`} >TechStack</Link>
-          <Link style={linkStyle} prefetch="intent" className={`${(pathName === 'experience' || pathName.includes('experience')) && 'is-active'}`} to={`/experience`} >Experience</Link>
-          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'thoughts' && 'is-active'}`} to={`/thoughts`}>Thoughts</Link>
-          <Link style={linkStyle} prefetch="intent" className={`${pathName === 'contact' && 'is-active'}`} to={`/contact`} >Contact</Link>
+        <nav className="flex gap-1">
+          {NAV_LINKS.map((currentItem) => {
+            return <LinkItem {...currentItem} key={currentItem.link} />
+          })}
         </nav>
       </header>
 
-      <div className="switch">
-        <div className="switch__base">
-          <SwitchBase />
-        </div>
-        <animated.div className="switch__chain" {...bind()} style={{ transform: y.to((y) => `translate3d(0px,${y}px,0)`) }}>
+      <div className="
+        absolute
+        z-20
+        top-[-210px] sm:top-[-200px] md:top-[-190px]
+        left-8 md:left-[4.5rem]
+        flex
+        justify-center
+        
+      ">
+        <animated.div
+            className="
+              absolute
+              -top-12
+              w-10
+              pb-5
+              flex
+              items-center
+              justify-center
+              drop-shadow-left-shadow
+            " 
+            {...bind()} 
+            style={{ 
+              willChange: 'transform',
+              cursor: 'grab',
+              touchAction: 'none',
+              transform: y ? y.to((y) => `translate3d(0px,${y}px,0)`) : undefined 
+            }}
+          >
           <Switch />
         </animated.div>
+
+        <div className="absolute">
+          <SwitchBase />
+        </div>
+
       </div>
 
     </>

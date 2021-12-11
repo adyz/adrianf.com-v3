@@ -4,10 +4,12 @@
   "description": "",
   "license": "",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix watch",
+    "build": "npm run build:css && remix build",
     "postinstall": "remix setup node",
-    "dev:netlify": "cross-env NODE_ENV=development netlify dev"
+    "dev:netlify": "cross-env NODE_ENV=development netlify dev",
+    "dev:css": "postcss styles --base styles --dir app/styles_dist/ -w",
+    "build:css": "postcss styles --base styles --dir app/styles_dist --env production",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\""
   },
   "dependencies": {
     "@netlify/functions": "^0.7.2",
@@ -25,9 +27,16 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^1.0.4",
+    "@remix-run/serve": "^1.0.6",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
+    "cssnano": "^5.0.12",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.0.2",
+    "tailwindcss": "latest",
     "typescript": "^4.1.2"
   },
   "engines": {

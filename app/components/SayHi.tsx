@@ -9,12 +9,10 @@ const SayHi = () => {
     return (
         // @ts-ignore
         <div role="none" onMouseEnter={trigger}>
-            <h1 style={{display: 'flex'}}>
                 Say hi!{" "}
-                <animated.span style={style}>
+                <animated.span className="inline-flex" style={style}>
                     <span role="img" aria-label="wave emoji">👋</span>
                 </animated.span>
-            </h1>
         </div>
     )
 }

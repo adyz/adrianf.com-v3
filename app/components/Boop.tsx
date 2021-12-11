@@ -6,9 +6,9 @@ const Boop = ({ children, ...boopConfig }: any) => {
     const [style, trigger] = useBoop(boopConfig);
     return (
       // @ts-ignore
-      <animated.span onMouseEnter={trigger} style={style}>
+      <animated.div onMouseEnter={trigger} style={style}>
         {children}
-      </animated.span>
+      </animated.div>
     );
   };
 

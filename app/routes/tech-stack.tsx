@@ -18,15 +18,33 @@ export let meta: MetaFunction = ({location}) => {
 export default function Page() {
     const description = `I use tools and I like to keep them up to date, here's my current stack`;
     return (
-        <div className="page-wrapper">
+        <div
+        className="
+                min-h-screen
+                border-b border-solid border-colorBorder
+                bg-gradient-to-b from-colorSuperLigherBrown to-colorBg bg-no-repeat
+                flex
+                flex-col
+                justify-center
+                items-center
+        "
+        style={{
+            backgroundPosition: '0 40px',
+            backgroundSize: '100% 40vh'
+        }}
+        >
             <PageHeader description={description}>
-
-                <h1>Tech stack  <span role="img" aria-label="emoji">
-                    👨‍💻
-                </span></h1>
-
+                Tech stack  <span role="img" aria-label="emoji">👨‍💻</span>
             </PageHeader>
-            <div className="sectionTechStack">
+            <div 
+                className="
+                    w-full max-w-4xl
+                    min-h-[255px]
+                    px-5
+                    mt-20
+                    mx-auto
+                "
+            >
                 <TechStackSection />
             </div>
         </div>

@@ -1,6 +1,7 @@
 export default function SocialYt() {
     return (
         <svg 
+        className="fill-current"
         height="100%"
         style={{
             'fillRule':'evenodd', 
