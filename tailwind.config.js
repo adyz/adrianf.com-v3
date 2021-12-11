@@ -48,6 +48,9 @@ module.exports = {
       animation: {
         fadeInOut: 'fadeInOut 1s ease',
         dropFade: 'dropFade 1s ease'
+      },
+      dropShadow: {
+        'left-shadow': '-6px -9px 0 rgba(0,0,0,.05)',
       }
     },
   },

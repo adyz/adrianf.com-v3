@@ -227,7 +227,7 @@ const Header = () => {
       )}
 
       <header className={`
-        fixed z-30 bg-colorBg
+        fixed z-40 bg-colorBg
         flex items-center shadow-sm
         w-full
         h-62px
@@ -270,6 +270,7 @@ const Header = () => {
         left-8 md:left-[4.5rem]
         flex
         justify-center
+        
       ">
         <animated.div
             className="
@@ -280,6 +281,7 @@ const Header = () => {
               flex
               items-center
               justify-center
+              drop-shadow-left-shadow
             " 
             {...bind()} 
             style={{ 

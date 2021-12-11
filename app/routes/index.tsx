@@ -98,7 +98,7 @@ export default function Index() {
                 className="
                   py-2 md:py-3 
                   px-3 md:px-8 
-                  text-[10px] sm:text-xs lg:text-base
+                  text-xs lg:text-base
                   uppercase rounded-md font-bold border-0 tracking-widest shadow-lg cursor-pointer
                   bg-colorWhite text-colorRed
                 "

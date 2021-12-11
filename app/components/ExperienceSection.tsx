@@ -17,7 +17,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
           `}
     >
       <div>
-        <img className="rounded-lg w-20 shadow-md float-right relative z-30" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
+        <img className="rounded-lg w-16 shadow-md float-right relative z-30" width="100%" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
         {full ? (
           <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
         ) : (
@@ -40,26 +40,18 @@ export default function ExperienceSection({ first = false, last = false, home = 
       {!full && (
         <>
 
+          {/* Vertical line */}
+          {isVisible &&
+            <div className="h-10 w-0.5 absolute z-10 top-0 right-8 bg-gradient-to-b from-colorSuperLigherBrown to-colorRed animate-dropFade" />
+          }
+          <div className="h-full w-0.5 bg-colorSuperLigherBrown absolute top-10 right-8" />
 
-            {isVisible && 
-              <div 
-                className={`h-10 w-0.5 absolute z-10 top-0 right-10 bg-gradient-to-b from-colorSuperLigherBrown to-colorRed animate-dropFade`}
-              />
-            }
-
-            <div className="h-full w-0.5 bg-colorSuperLigherBrown absolute top-10 right-10"/>
-
-            <div 
-              className={`h-2.5 w-2.5  z-20 rounded-full absolute -bottom-5 right-9 bg-colorSuperLigherBrown`}
-            />
-   
-            {isVisible && 
-              <div 
-                className={`h-2.5 w-2.5  z-20 rounded-full absolute -bottom-5 right-9 bg-colorRed opacity-0 animate-fadeInOut`}
-              />
-            }
-
-
+          {/* Dot */}
+          <div className="h-2.5 w-2.5  z-20 rounded-full absolute -bottom-5 right-7 bg-colorSuperLigherBrown" />
+          {isVisible &&
+            <div className="h-2.5 w-2.5  z-20 rounded-full absolute -bottom-5 right-7 bg-colorRed opacity-0 animate-fadeInOut" />
+          }
+          
         </>
       )}
 
