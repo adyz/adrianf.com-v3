@@ -78,6 +78,9 @@ export default function PageHeader({ description, children }: {
                   <img
                     className="
                       max-w-44 h-full object-cover rounded-md shadow-md
+                      bg-colorBorder
+                      aspect-[4/6]
+                      md:aspect-[5/6]
                     "
                     width="100%" 
                     height="100%" 

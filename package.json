@@ -36,7 +36,7 @@
     "cssnano": "^5.0.12",
     "postcss": "^8.4.4",
     "postcss-cli": "^9.0.2",
-    "tailwindcss": "^2.2.19",
+    "tailwindcss": "latest",
     "typescript": "^4.1.2"
   },
   "engines": {
