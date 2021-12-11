@@ -44,9 +44,18 @@ export default function Page() {
             <PageHeader description={description}>
                 Thoughts <span role="img" aria-label="emoji">🤯</span>
             </PageHeader>
-            <div className="sectionArticles">
+            <div 
+                className="
+                    w-full max-w-4xl
+                    min-h-[255px]
+                    px-5
+                    mt-20
+                    mx-auto
+                    pb-20
+                "
+            >
 
-                <div className="articles">
+                <div className="grid gap-10 grid-cols-2">
                     {data && data.length > 0 && data.map((article: any, articleIndex: any) => {
                         const articleImgRes =`https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,g_center,h_420,w_1400,q_30/${article.thumb}`
                         return (
@@ -55,17 +64,15 @@ export default function Page() {
                                 href={article.link}
                                 rel="noopener noreferrer"
                                 target="_blank"
-                                className="article"
+                                className="shadow-md rounded-md bg-colorWhite hover:shadow-lg"
                             >
-                                <span className="thumb">
-                                    <img width="100%" height="100%" src={articleImgRes} loading="lazy" alt={article.title} />
-                                </span>
-                                <span className="titleAndDate">
-                                    <span className="link-icon">
+                                <img className="rounded-t-md" width="100%" height="100%" src={articleImgRes} loading="lazy" alt={article.title} />
+                                <span className="p-5 block">
+                                    <span className="float-right text-colorBrown">
                                         <ExternalLinkIcon />
                                     </span>
-                                    <span className="title">{article.title}</span>
-                                    <span className="date">
+                                    <span className="text-lg text-colorBrown block">{article.title}</span>
+                                    <span className="text-xs text-colorLightBrown">
                                         {article.publishDate}
                                     </span>
                                 </span>
