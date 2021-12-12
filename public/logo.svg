@@ -1,7 +1,7 @@
 <svg version="1.1" id="logo-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="548.14px" height="344.973px" viewBox="0 243.445 548.14 344.973" enable-background="new 0 243.445 548.14 344.973"
 	 xml:space="preserve">
-<path fill="#6FA68C" class="logo-body" d="M24,588.417l335-335h176L24,588.417z"/>
-<path fill="#216155" class="logo-leg" d="M357,369.417h113l-446,219L357,369.417z"/>
-<path fill="#74CCA2" class="logo-wing" d="M231.875,380.417l127-127v331L231.875,380.417z"/>
+<path fill="#6FA68C" class="fill-colorLogoBody" d="M24,588.417l335-335h176L24,588.417z"/>
+<path fill="#216155" class="fill-colorLogoLeg" d="M357,369.417h113l-446,219L357,369.417z"/>
+<path fill="#74CCA2" class="fill-colorLogoWing" d="M231.875,380.417l127-127v331L231.875,380.417z"/>
 </svg>

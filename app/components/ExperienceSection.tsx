@@ -90,7 +90,15 @@ export default function ExperienceSection({ first = false, last = false, home = 
         )}
       </div>
       }
-      {!full && <Link className="text-colorBrown text-sm uppercase font-bold tracking-widest mt-2" to={`./${item.companyLogo}`}>Read more</Link>}
+      {!full && 
+        <Link 
+          className="text-colorBrown text-sm uppercase font-bold tracking-widest mt-2" 
+          to={`./${item.companyLogo}`}
+          title={`Read more about my experience with ${item.company}`}
+        >
+          Read more
+        </Link>
+      }
     </section>
   )
 }
