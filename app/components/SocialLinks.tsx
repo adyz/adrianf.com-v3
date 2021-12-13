@@ -10,7 +10,7 @@ const SocialLinks = () => {
                 return (
                     <Boop y={2} key={socialItemIndex} >
                         <a
-                            rel="noopener noreferrer"
+                            rel="noopener"
                             target="_blank"
                             title={`${socialItem.alt} profile ${author}`}
                             href={socialItem.link}
