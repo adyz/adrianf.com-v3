@@ -56,7 +56,7 @@ const Header = () => {
   const location = useLocation();
   const pathName = replaceAll(location.pathname, '/', '');
 
-  const [isSticky, setSticky] = useState(false);
+  const [isSticky, setSticky] = useState(typeof window !== 'undefined' ? window.scrollY > 0 ? true : false : false);
   const [colorMode, setColorMode] = useState<TColorMode>(loaderData?.colorMode ? loaderData.colorMode : 'unset');
   const [{ x, y }, set] = useSpring(() => ({ x: 0, y: 0 }))
   const [toggled, setToggled] = useState(false);
@@ -228,13 +228,12 @@ const Header = () => {
 
       <header className={`
         fixed z-40 bg-colorBg
-        flex items-center shadow-sm
+        flex items-center
         w-full
         h-62px
         justify-between
         py-1 md:py-2
-        px-2 md:px-8
-        
+        px-2 md:px-8  
         ${isSticky ? ' shadow-md' : 'shadow-sm'}
       `}>
         <Link
