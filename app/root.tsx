@@ -148,7 +148,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
         <div className="text-colorLightBrown">
           <p className="text-sm m-0"> © {new Date().getFullYear()} Designed &amp; Coded by <strong className="font-semibold">Adrian Florescu</strong></p>
           <p className="text-sm m-0">
-              Developed on <a target="_blank" title="Remix" rel="noopener" href="https://www.remix.run">
+              Developed on <a target="_blank" title="Remix" rel="noopener" href="https://remix.run">
               <svg width="1200" height="627" viewBox="0 0 1200 627" className="h-10 w-auto inline -mx-3 -mt-0.5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="1200" height="627"/>
                 <g className="fill-colorBrown">
